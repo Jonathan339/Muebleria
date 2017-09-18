@@ -95,7 +95,6 @@
     <Compile Include="Articulo_Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClaseArticulos.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

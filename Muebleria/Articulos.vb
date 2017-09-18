@@ -42,8 +42,10 @@
 
 
         'boton agregar y modificar
-
-
+        
+        Me.Validate()
+        Me.ArticuloBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
 
 
 
