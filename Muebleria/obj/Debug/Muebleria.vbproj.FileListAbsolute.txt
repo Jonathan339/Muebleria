@@ -26,3 +26,4 @@ C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApp
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Form1.resources
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Resources.resources
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\Muebleria.vbproj.GenerateResource.Cache
+C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Principal.resources

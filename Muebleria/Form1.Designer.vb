@@ -28,6 +28,7 @@ Partial Class Form1
         Me.ActualizaciónPreciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AjusteDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SalidaDeMercaderiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarModificarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -35,7 +36,6 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VendedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,6 +78,12 @@ Partial Class Form1
         Me.SalidaDeMercaderiaToolStripMenuItem.Name = "SalidaDeMercaderiaToolStripMenuItem"
         Me.SalidaDeMercaderiaToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.SalidaDeMercaderiaToolStripMenuItem.Text = "Salida de Mercaderia"
+        '
+        'BuscarToolStripMenuItem
+        '
+        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ClientesToolStripMenuItem
         '
@@ -122,12 +128,6 @@ Partial Class Form1
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
-        '
-        'BuscarToolStripMenuItem
-        '
-        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
-        Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'Form1
         '

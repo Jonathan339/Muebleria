@@ -20,4 +20,8 @@
         End
 
     End Sub
+
+    Private Sub AjusteDeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AjusteDeToolStripMenuItem.Click
+
+    End Sub
 End Class

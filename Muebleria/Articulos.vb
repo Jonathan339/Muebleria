@@ -14,6 +14,8 @@
         'Id_ArticuloTextBox.Enabled = False
         ArticuloDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader
 
+        Me.ArticuloBindingSource.AddNew()
+
 
 
 
@@ -46,6 +48,11 @@
         Me.Validate()
         Me.ArticuloBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
+        Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
+
+        Me.ArticuloBindingSource.MoveLast()
+        Me.ArticuloBindingSource.AddNew()
+
 
 
 
