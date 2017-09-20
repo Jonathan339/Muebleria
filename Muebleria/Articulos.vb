@@ -14,7 +14,22 @@
         'Id_ArticuloTextBox.Enabled = False
         ArticuloDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader
 
+
         Me.ArticuloBindingSource.AddNew()
+
+        'combo para tipo
+
+        TipoComboBox.Items.Add("Algarrobo")
+        TipoComboBox.Items.Add("Pino")
+        TipoComboBox.Items.Add("Roble")
+        TipoComboBox.Items.Add("Fibro facil")
+
+        'combo para categoria
+        CategoriaComboBox.Items.Add("Comedor")
+        CategoriaComboBox.Items.Add("Cocina")
+        CategoriaComboBox.Items.Add("Dormitorio")
+        CategoriaComboBox.Items.Add("Living")
+        CategoriaComboBox.Items.Add("Oficina")
 
 
 
@@ -54,6 +69,15 @@
         Me.ArticuloBindingSource.AddNew()
 
 
+
+
+
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Dim aux As Integer
+
+        aux = MsgBox("¿Quiere eliminar este registro?" & 1 + 32 & "Eliminar")
 
 
     End Sub

@@ -44,13 +44,14 @@ Partial Class Articulos
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Id_ArticuloTextBox = New System.Windows.Forms.TextBox
         Me.DescripcionTextBox = New System.Windows.Forms.TextBox
-        Me.CategoriaTextBox = New System.Windows.Forms.TextBox
-        Me.TipoTextBox = New System.Windows.Forms.TextBox
         Me.PrecioTextBox = New System.Windows.Forms.TextBox
         Me.StockTextBox = New System.Windows.Forms.TextBox
         Me.Stock_MinimoTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Button1 = New System.Windows.Forms.Button
+        Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
+        Me.TipoComboBox = New System.Windows.Forms.ComboBox
+        Me.Button2 = New System.Windows.Forms.Button
         Id_ArticuloLabel = New System.Windows.Forms.Label
         DescripcionLabel = New System.Windows.Forms.Label
         CategoriaLabel = New System.Windows.Forms.Label
@@ -225,22 +226,6 @@ Partial Class Articulos
         Me.DescripcionTextBox.Size = New System.Drawing.Size(100, 20)
         Me.DescripcionTextBox.TabIndex = 5
         '
-        'CategoriaTextBox
-        '
-        Me.CategoriaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
-        Me.CategoriaTextBox.Location = New System.Drawing.Point(98, 125)
-        Me.CategoriaTextBox.Name = "CategoriaTextBox"
-        Me.CategoriaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.CategoriaTextBox.TabIndex = 7
-        '
-        'TipoTextBox
-        '
-        Me.TipoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Tipo", True))
-        Me.TipoTextBox.Location = New System.Drawing.Point(98, 151)
-        Me.TipoTextBox.Name = "TipoTextBox"
-        Me.TipoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.TipoTextBox.TabIndex = 9
-        '
         'PrecioTextBox
         '
         Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Precio", True))
@@ -267,21 +252,51 @@ Partial Class Articulos
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.TipoComboBox)
+        Me.GroupBox1.Controls.Add(Me.CategoriaComboBox)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(197, 275)
+        Me.GroupBox1.Size = New System.Drawing.Size(197, 315)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(76, 221)
+        Me.Button1.Location = New System.Drawing.Point(86, 221)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Agregar/Modificar"
+        Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'CategoriaComboBox
+        '
+        Me.CategoriaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
+        Me.CategoriaComboBox.FormattingEnabled = True
+        Me.CategoriaComboBox.Location = New System.Drawing.Point(86, 80)
+        Me.CategoriaComboBox.Name = "CategoriaComboBox"
+        Me.CategoriaComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.CategoriaComboBox.TabIndex = 2
+        '
+        'TipoComboBox
+        '
+        Me.TipoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Tipo", True))
+        Me.TipoComboBox.FormattingEnabled = True
+        Me.TipoComboBox.Location = New System.Drawing.Point(86, 106)
+        Me.TipoComboBox.Name = "TipoComboBox"
+        Me.TipoComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.TipoComboBox.TabIndex = 3
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(86, 250)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 23)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Eliminar"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Articulos
         '
@@ -293,9 +308,7 @@ Partial Class Articulos
         Me.Controls.Add(DescripcionLabel)
         Me.Controls.Add(Me.DescripcionTextBox)
         Me.Controls.Add(CategoriaLabel)
-        Me.Controls.Add(Me.CategoriaTextBox)
         Me.Controls.Add(TipoLabel)
-        Me.Controls.Add(Me.TipoTextBox)
         Me.Controls.Add(PrecioLabel)
         Me.Controls.Add(Me.PrecioTextBox)
         Me.Controls.Add(StockLabel)
@@ -328,11 +341,12 @@ Partial Class Articulos
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Id_ArticuloTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DescripcionTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents CategoriaTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents TipoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PrecioTextBox As System.Windows.Forms.TextBox
     Friend WithEvents StockTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Stock_MinimoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TipoComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents CategoriaComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

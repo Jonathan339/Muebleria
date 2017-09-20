@@ -60,4 +60,7 @@
 
     End Sub
 
+    Private Sub Id_ArticuloTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_ArticuloTextBox.TextChanged
+
+    End Sub
 End Class
