@@ -68,17 +68,33 @@
         'busqueda
 
         Dim fila As Integer
-        fila = Me.ArticuloBindingSource.Find(ComboBox1.SelectedItem, TextBox1.Text)
+        'fila = Me.ArticuloBindingSource.Find(ComboBox1.SelectedText, TextBox1.Text)
+        fila = Me.ArticuloBindingSource.Find(Me.ComboBox1.SelectedItem, TextBox1.Text)
+
         If fila <> -1 Then
             ArticuloBindingSource.Position = fila
-            Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
+            Me.DataGridViewTextBoxColumn1.Name = ArticuloBindingSource.Current("Id_Articulo")
+            Me.DataGridViewTextBoxColumn2.Name = ArticuloBindingSource.Current("Descripcion")
+            Me.DataGridViewTextBoxColumn3.Name = ArticuloBindingSource.Current("Categoria")
+            Me.DataGridViewTextBoxColumn4.Name = ArticuloBindingSource.Current("Tipo")
+            Me.DataGridViewTextBoxColumn5.Name = ArticuloBindingSource.Current("Precio")
+            Me.DataGridViewTextBoxColumn6.Name = ArticuloBindingSource.Current("Stock")
+            Me.DataGridViewTextBoxColumn7.Name = ArticuloBindingSource.Current("Stock_Minimo")
+
+            'Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
         End If
+
+
+       
 
 
 
 
     End Sub
+
+
+
 
     
 End Class
