@@ -65,6 +65,8 @@
         Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
+        Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo)
+
         Me.ArticuloBindingSource.MoveLast()
         Me.ArticuloBindingSource.AddNew()
 

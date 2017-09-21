@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class Principal
 
     Private Sub AgregarModificarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarModificarToolStripMenuItem.Click
 
@@ -65,28 +65,29 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        'busqueda
+
+        'busqueda con combobox
 
         Dim fila As Integer
-        'fila = Me.ArticuloBindingSource.Find(ComboBox1.SelectedText, TextBox1.Text)
-        fila = Me.ArticuloBindingSource.Find(Me.ComboBox1.SelectedItem, TextBox1.Text)
-
-        If fila <> -1 Then
-            ArticuloBindingSource.Position = fila
-            Me.DataGridViewTextBoxColumn1.Name = ArticuloBindingSource.Current("Id_Articulo")
-            Me.DataGridViewTextBoxColumn2.Name = ArticuloBindingSource.Current("Descripcion")
-            Me.DataGridViewTextBoxColumn3.Name = ArticuloBindingSource.Current("Categoria")
-            Me.DataGridViewTextBoxColumn4.Name = ArticuloBindingSource.Current("Tipo")
-            Me.DataGridViewTextBoxColumn5.Name = ArticuloBindingSource.Current("Precio")
-            Me.DataGridViewTextBoxColumn6.Name = ArticuloBindingSource.Current("Stock")
-            Me.DataGridViewTextBoxColumn7.Name = ArticuloBindingSource.Current("Stock_Minimo")
-
-            'Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
-
+        If ComboBox1.SelectedItem <> "" And TextBox1.Text <> "" Then
+            fila = Me.ArticuloBindingSource.Find(Me.ComboBox1.SelectedItem, TextBox1.Text)
+            If fila <> -1 Then
+                ArticuloBindingSource.Position = fila
+                Me.DataGridViewTextBoxColumn1.Name = ArticuloBindingSource.Current("Id_Articulo")
+                Me.DataGridViewTextBoxColumn2.Name = ArticuloBindingSource.Current("Descripcion")
+                Me.DataGridViewTextBoxColumn3.Name = ArticuloBindingSource.Current("Categoria")
+                Me.DataGridViewTextBoxColumn4.Name = ArticuloBindingSource.Current("Tipo")
+                Me.DataGridViewTextBoxColumn5.Name = ArticuloBindingSource.Current("Precio")
+                Me.DataGridViewTextBoxColumn6.Name = ArticuloBindingSource.Current("Stock")
+                Me.DataGridViewTextBoxColumn7.Name = ArticuloBindingSource.Current("Stock_Minimo")
+            End If
         End If
 
 
-       
+        
+
+
+
 
 
 
@@ -96,5 +97,5 @@
 
 
 
-    
+
 End Class
