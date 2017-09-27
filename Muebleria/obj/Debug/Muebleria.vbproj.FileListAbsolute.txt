@@ -22,7 +22,6 @@ C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\bin\Debug\Muebleria.
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Articulos.resources
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Articulo_Busqueda.resources
-C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Form1.resources
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Resources.resources
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\Muebleria.vbproj.GenerateResource.Cache
 C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Principal.resources
@@ -46,3 +45,6 @@ C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\W
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Stock.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Principal.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Cliente.resources
+C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Actualizar_Precios.resources
+C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Cliente.resources
+C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Stock.resources

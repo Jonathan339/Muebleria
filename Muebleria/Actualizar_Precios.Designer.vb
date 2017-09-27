@@ -206,6 +206,9 @@ Partial Class Actualizar_Precios
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Id_ArticuloLabel)
@@ -240,18 +243,21 @@ Partial Class Actualizar_Precios
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 23)
         Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Guardar"
+        Me.Button1.Text = "Modificar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ArticuloDataGridView
         '
+        Me.ArticuloDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ArticuloDataGridView.AutoGenerateColumns = False
         Me.ArticuloDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ArticuloDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.ArticuloDataGridView.DataSource = Me.ArticuloBindingSource
         Me.ArticuloDataGridView.Location = New System.Drawing.Point(266, 23)
         Me.ArticuloDataGridView.Name = "ArticuloDataGridView"
-        Me.ArticuloDataGridView.Size = New System.Drawing.Size(468, 220)
+        Me.ArticuloDataGridView.Size = New System.Drawing.Size(468, 260)
         Me.ArticuloDataGridView.TabIndex = 15
         '
         'DataGridViewTextBoxColumn1

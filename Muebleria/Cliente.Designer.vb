@@ -23,7 +23,6 @@ Partial Class Cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cliente))
         Dim Id_ClienteLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim ApellidoLabel As System.Windows.Forms.Label
@@ -36,27 +35,25 @@ Partial Class Cliente
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.ClienteTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
-        Me.ClienteBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton
-        Me.ClienteBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton
         Me.Id_ClienteTextBox = New System.Windows.Forms.TextBox
         Me.NombreTextBox = New System.Windows.Forms.TextBox
         Me.ApellidoTextBox = New System.Windows.Forms.TextBox
         Me.DomicilioTextBox = New System.Windows.Forms.TextBox
-        Me.LocalidadTextBox = New System.Windows.Forms.TextBox
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox
         Me.EmailTextBox = New System.Windows.Forms.TextBox
         Me.FechaIngresoDateTimePicker = New System.Windows.Forms.DateTimePicker
+        Me.ClienteDataGridView = New System.Windows.Forms.DataGridView
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.LocalidadComboBox = New System.Windows.Forms.ComboBox
         Id_ClienteLabel = New System.Windows.Forms.Label
         NombreLabel = New System.Windows.Forms.Label
         ApellidoLabel = New System.Windows.Forms.Label
@@ -67,9 +64,81 @@ Partial Class Cliente
         FechaIngresoLabel = New System.Windows.Forms.Label
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClienteBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ClienteBindingNavigator.SuspendLayout()
+        CType(Me.ClienteDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Id_ClienteLabel
+        '
+        Id_ClienteLabel.AutoSize = True
+        Id_ClienteLabel.Location = New System.Drawing.Point(6, 21)
+        Id_ClienteLabel.Name = "Id_ClienteLabel"
+        Id_ClienteLabel.Size = New System.Drawing.Size(54, 13)
+        Id_ClienteLabel.TabIndex = 1
+        Id_ClienteLabel.Text = "Id Cliente:"
+        '
+        'NombreLabel
+        '
+        NombreLabel.AutoSize = True
+        NombreLabel.Location = New System.Drawing.Point(6, 47)
+        NombreLabel.Name = "NombreLabel"
+        NombreLabel.Size = New System.Drawing.Size(47, 13)
+        NombreLabel.TabIndex = 3
+        NombreLabel.Text = "Nombre:"
+        '
+        'ApellidoLabel
+        '
+        ApellidoLabel.AutoSize = True
+        ApellidoLabel.Location = New System.Drawing.Point(6, 73)
+        ApellidoLabel.Name = "ApellidoLabel"
+        ApellidoLabel.Size = New System.Drawing.Size(47, 13)
+        ApellidoLabel.TabIndex = 5
+        ApellidoLabel.Text = "Apellido:"
+        '
+        'DomicilioLabel
+        '
+        DomicilioLabel.AutoSize = True
+        DomicilioLabel.Location = New System.Drawing.Point(6, 99)
+        DomicilioLabel.Name = "DomicilioLabel"
+        DomicilioLabel.Size = New System.Drawing.Size(52, 13)
+        DomicilioLabel.TabIndex = 7
+        DomicilioLabel.Text = "Domicilio:"
+        '
+        'LocalidadLabel
+        '
+        LocalidadLabel.AutoSize = True
+        LocalidadLabel.Location = New System.Drawing.Point(6, 125)
+        LocalidadLabel.Name = "LocalidadLabel"
+        LocalidadLabel.Size = New System.Drawing.Size(56, 13)
+        LocalidadLabel.TabIndex = 9
+        LocalidadLabel.Text = "Localidad:"
+        '
+        'TelefonoLabel
+        '
+        TelefonoLabel.AutoSize = True
+        TelefonoLabel.Location = New System.Drawing.Point(6, 151)
+        TelefonoLabel.Name = "TelefonoLabel"
+        TelefonoLabel.Size = New System.Drawing.Size(52, 13)
+        TelefonoLabel.TabIndex = 11
+        TelefonoLabel.Text = "Telefono:"
+        '
+        'EmailLabel
+        '
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New System.Drawing.Point(6, 177)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New System.Drawing.Size(35, 13)
+        EmailLabel.TabIndex = 13
+        EmailLabel.Text = "Email:"
+        '
+        'FechaIngresoLabel
+        '
+        FechaIngresoLabel.AutoSize = True
+        FechaIngresoLabel.Location = New System.Drawing.Point(6, 204)
+        FechaIngresoLabel.Name = "FechaIngresoLabel"
+        FechaIngresoLabel.Size = New System.Drawing.Size(78, 13)
+        FechaIngresoLabel.TabIndex = 15
+        FechaIngresoLabel.Text = "Fecha Ingreso:"
         '
         'MuebleriaDataSet
         '
@@ -98,309 +167,203 @@ Partial Class Cliente
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.VentasTableAdapter = Nothing
         '
-        'ClienteBindingNavigator
-        '
-        Me.ClienteBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.ClienteBindingNavigator.BindingSource = Me.ClienteBindingSource
-        Me.ClienteBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.ClienteBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.ClienteBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ClienteBindingNavigatorSaveItem})
-        Me.ClienteBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.ClienteBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.ClienteBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.ClienteBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.ClienteBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.ClienteBindingNavigator.Name = "ClienteBindingNavigator"
-        Me.ClienteBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ClienteBindingNavigator.Size = New System.Drawing.Size(786, 25)
-        Me.ClienteBindingNavigator.TabIndex = 0
-        Me.ClienteBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 15)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'ClienteBindingNavigatorSaveItem
-        '
-        Me.ClienteBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ClienteBindingNavigatorSaveItem.Image = CType(resources.GetObject("ClienteBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.ClienteBindingNavigatorSaveItem.Name = "ClienteBindingNavigatorSaveItem"
-        Me.ClienteBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
-        Me.ClienteBindingNavigatorSaveItem.Text = "Guardar datos"
-        '
-        'Id_ClienteLabel
-        '
-        Id_ClienteLabel.AutoSize = True
-        Id_ClienteLabel.Location = New System.Drawing.Point(12, 58)
-        Id_ClienteLabel.Name = "Id_ClienteLabel"
-        Id_ClienteLabel.Size = New System.Drawing.Size(54, 13)
-        Id_ClienteLabel.TabIndex = 1
-        Id_ClienteLabel.Text = "Id Cliente:"
-        '
         'Id_ClienteTextBox
         '
         Me.Id_ClienteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Id_Cliente", True))
-        Me.Id_ClienteTextBox.Location = New System.Drawing.Point(96, 55)
+        Me.Id_ClienteTextBox.Location = New System.Drawing.Point(90, 18)
         Me.Id_ClienteTextBox.Name = "Id_ClienteTextBox"
-        Me.Id_ClienteTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.Id_ClienteTextBox.Size = New System.Drawing.Size(104, 20)
         Me.Id_ClienteTextBox.TabIndex = 2
-        '
-        'NombreLabel
-        '
-        NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(12, 84)
-        NombreLabel.Name = "NombreLabel"
-        NombreLabel.Size = New System.Drawing.Size(47, 13)
-        NombreLabel.TabIndex = 3
-        NombreLabel.Text = "Nombre:"
         '
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(96, 81)
+        Me.NombreTextBox.Location = New System.Drawing.Point(90, 44)
         Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.NombreTextBox.Size = New System.Drawing.Size(104, 20)
         Me.NombreTextBox.TabIndex = 4
-        '
-        'ApellidoLabel
-        '
-        ApellidoLabel.AutoSize = True
-        ApellidoLabel.Location = New System.Drawing.Point(12, 110)
-        ApellidoLabel.Name = "ApellidoLabel"
-        ApellidoLabel.Size = New System.Drawing.Size(47, 13)
-        ApellidoLabel.TabIndex = 5
-        ApellidoLabel.Text = "Apellido:"
         '
         'ApellidoTextBox
         '
         Me.ApellidoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Apellido", True))
-        Me.ApellidoTextBox.Location = New System.Drawing.Point(96, 107)
+        Me.ApellidoTextBox.Location = New System.Drawing.Point(90, 70)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
-        Me.ApellidoTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.ApellidoTextBox.Size = New System.Drawing.Size(104, 20)
         Me.ApellidoTextBox.TabIndex = 6
-        '
-        'DomicilioLabel
-        '
-        DomicilioLabel.AutoSize = True
-        DomicilioLabel.Location = New System.Drawing.Point(12, 136)
-        DomicilioLabel.Name = "DomicilioLabel"
-        DomicilioLabel.Size = New System.Drawing.Size(52, 13)
-        DomicilioLabel.TabIndex = 7
-        DomicilioLabel.Text = "Domicilio:"
         '
         'DomicilioTextBox
         '
         Me.DomicilioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Domicilio", True))
-        Me.DomicilioTextBox.Location = New System.Drawing.Point(96, 133)
+        Me.DomicilioTextBox.Location = New System.Drawing.Point(90, 96)
         Me.DomicilioTextBox.Name = "DomicilioTextBox"
-        Me.DomicilioTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.DomicilioTextBox.Size = New System.Drawing.Size(104, 20)
         Me.DomicilioTextBox.TabIndex = 8
-        '
-        'LocalidadLabel
-        '
-        LocalidadLabel.AutoSize = True
-        LocalidadLabel.Location = New System.Drawing.Point(12, 162)
-        LocalidadLabel.Name = "LocalidadLabel"
-        LocalidadLabel.Size = New System.Drawing.Size(56, 13)
-        LocalidadLabel.TabIndex = 9
-        LocalidadLabel.Text = "Localidad:"
-        '
-        'LocalidadTextBox
-        '
-        Me.LocalidadTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Localidad", True))
-        Me.LocalidadTextBox.Location = New System.Drawing.Point(96, 159)
-        Me.LocalidadTextBox.Name = "LocalidadTextBox"
-        Me.LocalidadTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.LocalidadTextBox.TabIndex = 10
-        '
-        'TelefonoLabel
-        '
-        TelefonoLabel.AutoSize = True
-        TelefonoLabel.Location = New System.Drawing.Point(12, 188)
-        TelefonoLabel.Name = "TelefonoLabel"
-        TelefonoLabel.Size = New System.Drawing.Size(52, 13)
-        TelefonoLabel.TabIndex = 11
-        TelefonoLabel.Text = "Telefono:"
         '
         'TelefonoTextBox
         '
         Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Telefono", True))
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(96, 185)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(90, 148)
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(104, 20)
         Me.TelefonoTextBox.TabIndex = 12
-        '
-        'EmailLabel
-        '
-        EmailLabel.AutoSize = True
-        EmailLabel.Location = New System.Drawing.Point(12, 214)
-        EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(35, 13)
-        EmailLabel.TabIndex = 13
-        EmailLabel.Text = "Email:"
         '
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(96, 211)
+        Me.EmailTextBox.Location = New System.Drawing.Point(90, 174)
         Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.EmailTextBox.Size = New System.Drawing.Size(104, 20)
         Me.EmailTextBox.TabIndex = 14
-        '
-        'FechaIngresoLabel
-        '
-        FechaIngresoLabel.AutoSize = True
-        FechaIngresoLabel.Location = New System.Drawing.Point(12, 241)
-        FechaIngresoLabel.Name = "FechaIngresoLabel"
-        FechaIngresoLabel.Size = New System.Drawing.Size(78, 13)
-        FechaIngresoLabel.TabIndex = 15
-        FechaIngresoLabel.Text = "Fecha Ingreso:"
         '
         'FechaIngresoDateTimePicker
         '
         Me.FechaIngresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ClienteBindingSource, "FechaIngreso", True))
-        Me.FechaIngresoDateTimePicker.Location = New System.Drawing.Point(96, 237)
+        Me.FechaIngresoDateTimePicker.Location = New System.Drawing.Point(90, 200)
         Me.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker"
-        Me.FechaIngresoDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaIngresoDateTimePicker.Size = New System.Drawing.Size(104, 20)
         Me.FechaIngresoDateTimePicker.TabIndex = 16
+        '
+        'ClienteDataGridView
+        '
+        Me.ClienteDataGridView.AutoGenerateColumns = False
+        Me.ClienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ClienteDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.ClienteDataGridView.DataSource = Me.ClienteBindingSource
+        Me.ClienteDataGridView.Location = New System.Drawing.Point(240, 37)
+        Me.ClienteDataGridView.Name = "ClienteDataGridView"
+        Me.ClienteDataGridView.Size = New System.Drawing.Size(534, 263)
+        Me.ClienteDataGridView.TabIndex = 17
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id_Cliente"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id_Cliente"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Apellido"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Apellido"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Domicilio"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Domicilio"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Localidad"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Localidad"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Telefono"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Telefono"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Email"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Email"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "FechaIngreso"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "FechaIngreso"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(90, 237)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(104, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Agregar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.LocalidadComboBox)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(NombreLabel)
+        Me.GroupBox1.Controls.Add(Me.FechaIngresoDateTimePicker)
+        Me.GroupBox1.Controls.Add(Id_ClienteLabel)
+        Me.GroupBox1.Controls.Add(FechaIngresoLabel)
+        Me.GroupBox1.Controls.Add(Me.Id_ClienteTextBox)
+        Me.GroupBox1.Controls.Add(Me.EmailTextBox)
+        Me.GroupBox1.Controls.Add(EmailLabel)
+        Me.GroupBox1.Controls.Add(Me.NombreTextBox)
+        Me.GroupBox1.Controls.Add(Me.TelefonoTextBox)
+        Me.GroupBox1.Controls.Add(ApellidoLabel)
+        Me.GroupBox1.Controls.Add(TelefonoLabel)
+        Me.GroupBox1.Controls.Add(Me.ApellidoTextBox)
+        Me.GroupBox1.Controls.Add(DomicilioLabel)
+        Me.GroupBox1.Controls.Add(LocalidadLabel)
+        Me.GroupBox1.Controls.Add(Me.DomicilioTextBox)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 28)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(212, 280)
+        Me.GroupBox1.TabIndex = 19
+        Me.GroupBox1.TabStop = False
+        '
+        'LocalidadComboBox
+        '
+        Me.LocalidadComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Localidad", True))
+        Me.LocalidadComboBox.FormattingEnabled = True
+        Me.LocalidadComboBox.Location = New System.Drawing.Point(90, 125)
+        Me.LocalidadComboBox.Name = "LocalidadComboBox"
+        Me.LocalidadComboBox.Size = New System.Drawing.Size(104, 21)
+        Me.LocalidadComboBox.TabIndex = 19
         '
         'Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(786, 279)
-        Me.Controls.Add(Id_ClienteLabel)
-        Me.Controls.Add(Me.Id_ClienteTextBox)
-        Me.Controls.Add(NombreLabel)
-        Me.Controls.Add(Me.NombreTextBox)
-        Me.Controls.Add(ApellidoLabel)
-        Me.Controls.Add(Me.ApellidoTextBox)
-        Me.Controls.Add(DomicilioLabel)
-        Me.Controls.Add(Me.DomicilioTextBox)
-        Me.Controls.Add(LocalidadLabel)
-        Me.Controls.Add(Me.LocalidadTextBox)
-        Me.Controls.Add(TelefonoLabel)
-        Me.Controls.Add(Me.TelefonoTextBox)
-        Me.Controls.Add(EmailLabel)
-        Me.Controls.Add(Me.EmailTextBox)
-        Me.Controls.Add(FechaIngresoLabel)
-        Me.Controls.Add(Me.FechaIngresoDateTimePicker)
-        Me.Controls.Add(Me.ClienteBindingNavigator)
+        Me.ClientSize = New System.Drawing.Size(786, 325)
+        Me.Controls.Add(Me.ClienteDataGridView)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Cliente"
         Me.Text = "Cliente"
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClienteBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ClienteBindingNavigator.ResumeLayout(False)
-        Me.ClienteBindingNavigator.PerformLayout()
+        CType(Me.ClienteDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents MuebleriaDataSet As WindowsApplication1.MuebleriaDataSet
     Friend WithEvents ClienteBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ClienteTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.ClienteTableAdapter
     Friend WithEvents TableAdapterManager As WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents ClienteBindingNavigator As System.Windows.Forms.BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ClienteBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents Id_ClienteTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ApellidoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DomicilioTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents LocalidadTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents EmailTextBox As System.Windows.Forms.TextBox
     Friend WithEvents FechaIngresoDateTimePicker As System.Windows.Forms.DateTimePicker
+    Friend WithEvents ClienteDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents LocalidadComboBox As System.Windows.Forms.ComboBox
 End Class
