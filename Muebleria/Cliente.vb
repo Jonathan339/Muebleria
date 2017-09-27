@@ -11,6 +11,13 @@
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Cliente' Puede moverla o quitarla según sea necesario.
         Me.ClienteTableAdapter.Fill(Me.MuebleriaDataSet.Cliente)
 
+        Me.ClienteBindingSource.AddNew()
+
+
+
+
+
+
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -21,7 +28,9 @@
         Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
         Me.ClienteTableAdapter.Fill(Me.MuebleriaDataSet.Cliente)
         Me.ClienteBindingSource.MoveLast()
-        Me.ClienteBindingSource.AddNew()
+        'Me.ClienteBindingSource.AddNew()
+
+        FechaIngresoDateTimePicker.Text = FechaIngresoDateTimePicker.Text
 
     End Sub
 End Class

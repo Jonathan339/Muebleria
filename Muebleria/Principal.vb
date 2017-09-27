@@ -24,9 +24,7 @@
 
         'configuracion del textbox para busqueda
 
-
-
-
+        
 
 
 
@@ -40,19 +38,10 @@
 
     End Sub
 
-    Private Sub AjusteDeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AjusteDeToolStripMenuItem.Click
-
-
-
-
-
-
-    End Sub
 
     Private Sub ActualizaciónPreciosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActualizaciónPreciosToolStripMenuItem.Click
 
         'form actualiza precios
-
         Actualizar_Precios.Show()
 
     End Sub
@@ -84,23 +73,8 @@
         End If
 
 
-        
-
-
-
-
-
-
-
     End Sub
 
-
-
-
-
-    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
-
-    End Sub
 
     Private Sub MostrarVentasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MostrarVentasToolStripMenuItem.Click
 
@@ -110,6 +84,15 @@
     End Sub
 
     Private Sub EmpleadosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EmpleadosToolStripMenuItem.Click
+
+        'form vendedores
         Vendedores.Show()
+    End Sub
+
+
+    Private Sub AgregarModificarToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarModificarToolStripMenuItem1.Click
+
+        'form clientes
+        Cliente.Show()
     End Sub
 End Class

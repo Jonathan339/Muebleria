@@ -255,8 +255,8 @@ Partial Class Principal
         'EmpleadosToolStripMenuItem
         '
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EmpleadosToolStripMenuItem.Text = "Empleados"
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.EmpleadosToolStripMenuItem.Text = "Agregar empleado"
         '
         'Principal
         '
