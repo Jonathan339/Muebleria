@@ -30,8 +30,6 @@ Partial Class Principal
         Me.AjusteDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarModificarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.AgregarModificarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VendedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -51,6 +49,8 @@ Partial Class Principal
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
+        Me.MostrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +60,7 @@ Partial Class Principal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArticuloToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProveedorToolStripMenuItem, Me.VentasToolStripMenuItem, Me.VendedoresToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArticuloToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.VentasToolStripMenuItem, Me.VendedoresToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(761, 24)
@@ -105,27 +105,16 @@ Partial Class Principal
         Me.AgregarModificarToolStripMenuItem1.Size = New System.Drawing.Size(172, 22)
         Me.AgregarModificarToolStripMenuItem1.Text = "Agregar/Modificar"
         '
-        'ProveedorToolStripMenuItem
-        '
-        Me.ProveedorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem2})
-        Me.ProveedorToolStripMenuItem.Name = "ProveedorToolStripMenuItem"
-        Me.ProveedorToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
-        Me.ProveedorToolStripMenuItem.Text = "Proveedor"
-        '
-        'AgregarModificarToolStripMenuItem2
-        '
-        Me.AgregarModificarToolStripMenuItem2.Name = "AgregarModificarToolStripMenuItem2"
-        Me.AgregarModificarToolStripMenuItem2.Size = New System.Drawing.Size(172, 22)
-        Me.AgregarModificarToolStripMenuItem2.Text = "Agregar/Modificar"
-        '
         'VentasToolStripMenuItem
         '
+        Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MostrarVentasToolStripMenuItem})
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
         Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'VendedoresToolStripMenuItem
         '
+        Me.VendedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem})
         Me.VendedoresToolStripMenuItem.Name = "VendedoresToolStripMenuItem"
         Me.VendedoresToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.VendedoresToolStripMenuItem.Text = "Vendedores"
@@ -257,6 +246,18 @@ Partial Class Principal
         Me.Button1.Text = "Buscar por"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'MostrarVentasToolStripMenuItem
+        '
+        Me.MostrarVentasToolStripMenuItem.Name = "MostrarVentasToolStripMenuItem"
+        Me.MostrarVentasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MostrarVentasToolStripMenuItem.Text = "Mostrar ventas"
+        '
+        'EmpleadosToolStripMenuItem
+        '
+        Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EmpleadosToolStripMenuItem.Text = "Empleados"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -284,8 +285,6 @@ Partial Class Principal
     Friend WithEvents AgregarModificarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarModificarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProveedorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AgregarModificarToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ActualizaciónPreciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VendedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -307,5 +306,7 @@ Partial Class Principal
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents MostrarVentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EmpleadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
