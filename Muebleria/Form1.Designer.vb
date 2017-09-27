@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Principal
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,6 +28,7 @@ Partial Class Principal
         Me.AgregarModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ActualizaciónPreciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AjusteDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.SalidaDeMercaderiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarModificarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.ProveedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -69,7 +70,7 @@ Partial Class Principal
         '
         'ArticuloToolStripMenuItem
         '
-        Me.ArticuloToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem, Me.ActualizaciónPreciosToolStripMenuItem, Me.AjusteDeToolStripMenuItem})
+        Me.ArticuloToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem, Me.ActualizaciónPreciosToolStripMenuItem, Me.AjusteDeToolStripMenuItem, Me.SalidaDeMercaderiaToolStripMenuItem})
         Me.ArticuloToolStripMenuItem.Name = "ArticuloToolStripMenuItem"
         Me.ArticuloToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.ArticuloToolStripMenuItem.Text = "Articulos"
@@ -91,6 +92,12 @@ Partial Class Principal
         Me.AjusteDeToolStripMenuItem.Name = "AjusteDeToolStripMenuItem"
         Me.AjusteDeToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.AjusteDeToolStripMenuItem.Text = "Ajuste de Stock"
+        '
+        'SalidaDeMercaderiaToolStripMenuItem
+        '
+        Me.SalidaDeMercaderiaToolStripMenuItem.Name = "SalidaDeMercaderiaToolStripMenuItem"
+        Me.SalidaDeMercaderiaToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.SalidaDeMercaderiaToolStripMenuItem.Text = "Salida de Mercaderia"
         '
         'ClientesToolStripMenuItem
         '
@@ -229,7 +236,7 @@ Partial Class Principal
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(737, 55)
+        Me.GroupBox1.Size = New System.Drawing.Size(737, 68)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
@@ -257,7 +264,7 @@ Partial Class Principal
         Me.Button1.Text = "Buscar por"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Principal
+        'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -266,7 +273,7 @@ Partial Class Principal
         Me.Controls.Add(Me.ArticuloDataGridView)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Principal"
+        Me.Name = "Form1"
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -290,6 +297,7 @@ Partial Class Principal
     Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VendedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AjusteDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SalidaDeMercaderiaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MuebleriaDataSet As WindowsApplication1.MuebleriaDataSet
     Friend WithEvents ArticuloBindingSource As System.Windows.Forms.BindingSource

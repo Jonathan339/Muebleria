@@ -45,3 +45,4 @@ C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Proyecto\Muebleria\ob
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Actualizar_Precios.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Stock.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Principal.resources
+C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Cliente.resources

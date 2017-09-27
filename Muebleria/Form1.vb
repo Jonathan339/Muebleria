@@ -21,11 +21,15 @@
         ComboBox1.Items.Add("Descripcion")
         ComboBox1.Items.Add("Categoria")
         ComboBox1.Items.Add("Tipo")
-
-        'configuracion del textbox para busqueda
-
+        ComboBox1.Items.Add("Precio")
 
 
+
+        Label1.Visible = False
+        Label2.Visible = False
+        TextBox2.Visible = False
+        TextBox3.Visible = False
+        
 
 
 
@@ -66,9 +70,11 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
-        'busqueda con combobox
+        'busqueda con combobox simple
 
         Dim fila As Integer
+        
+
         If ComboBox1.SelectedItem <> "" And TextBox1.Text <> "" Then
             fila = Me.ArticuloBindingSource.Find(Me.ComboBox1.SelectedItem, TextBox1.Text)
             If fila <> -1 Then
@@ -80,9 +86,20 @@
                 Me.DataGridViewTextBoxColumn5.Name = ArticuloBindingSource.Current("Precio")
                 Me.DataGridViewTextBoxColumn6.Name = ArticuloBindingSource.Current("Stock")
                 Me.DataGridViewTextBoxColumn7.Name = ArticuloBindingSource.Current("Stock_Minimo")
+
+
+                'buscar solucion a la seleccion de la fila del registro.
+                'no selecciona coloreando el registro que encontro
+                Me.ArticuloDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
             End If
+        Else
+            MsgBox("Por favor Ingrese los datos para realizar la busqueda.")
         End If
 
+
+
+        'busqueda por combo y precio
 
         
 
@@ -98,7 +115,27 @@
 
 
 
-    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+    Private Sub ArticuloDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ArticuloDataGridView.CellContentClick
+
+
+
+
+
+    End Sub
+
+    
+
+    
+   
+    
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+        If ComboBox1.SelectedItem = "Precio" Then
+            Label1.Visible = True
+            Label2.Visible = True
+            TextBox2.Visible = True
+            TextBox3.Visible = True
+        End If
 
     End Sub
 End Class

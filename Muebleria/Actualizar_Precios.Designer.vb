@@ -41,6 +41,7 @@ Partial Class Actualizar_Precios
         Me.StockTextBox = New System.Windows.Forms.TextBox
         Me.Stock_MinimoTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.ArticuloDataGridView = New System.Windows.Forms.DataGridView
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -50,7 +51,6 @@ Partial Class Actualizar_Precios
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.TextBox1 = New System.Windows.Forms.TextBox
         Id_ArticuloLabel = New System.Windows.Forms.Label
         DescripcionLabel = New System.Windows.Forms.Label
         CategoriaLabel = New System.Windows.Forms.Label
@@ -227,6 +227,13 @@ Partial Class Actualizar_Precios
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(86, 21)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.TabIndex = 16
+        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(86, 218)
@@ -289,13 +296,6 @@ Partial Class Actualizar_Precios
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "Stock_Minimo"
         Me.DataGridViewTextBoxColumn7.HeaderText = "Stock_Minimo"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(86, 21)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 16
         '
         'Actualizar_Precios
         '
