@@ -33,4 +33,8 @@
         FechaIngresoDateTimePicker.Text = FechaIngresoDateTimePicker.Text
 
     End Sub
+
+    Private Sub Id_ClienteTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_ClienteTextBox.TextChanged
+
+    End Sub
 End Class

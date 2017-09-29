@@ -224,7 +224,7 @@ Partial Class Ventas
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(69, 152)
+        Me.Button1.Location = New System.Drawing.Point(69, 143)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 10
