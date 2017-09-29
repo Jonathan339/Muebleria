@@ -170,6 +170,7 @@ Partial Class Cliente
         'Id_ClienteTextBox
         '
         Me.Id_ClienteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Id_Cliente", True))
+        Me.Id_ClienteTextBox.Enabled = False
         Me.Id_ClienteTextBox.Location = New System.Drawing.Point(90, 18)
         Me.Id_ClienteTextBox.Name = "Id_ClienteTextBox"
         Me.Id_ClienteTextBox.Size = New System.Drawing.Size(104, 20)
