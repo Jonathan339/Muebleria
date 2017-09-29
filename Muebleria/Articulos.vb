@@ -8,6 +8,10 @@
     End Sub
 
     Private Sub Articulos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Tipo_Material' Puede moverla o quitarla según sea necesario.
+        Me.Tipo_MaterialTableAdapter.Fill(Me.MuebleriaDataSet.Tipo_Material)
+        'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
+        Me.CategoriaTableAdapter.Fill(Me.MuebleriaDataSet.Categoria)
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Articulo' Puede moverla o quitarla según sea necesario.
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 

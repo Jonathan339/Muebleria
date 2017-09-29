@@ -54,3 +54,4 @@ C:\Users\x\Documents\Visual Studio 2008\Muebleria\Muebleria\obj\Debug\WindowsApp
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Proveedor.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Vendedores.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Ventas.resources
+C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\Debug\WindowsApplication1.Ajuste_de_Stock.resources

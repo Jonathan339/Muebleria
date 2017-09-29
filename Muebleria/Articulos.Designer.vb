@@ -48,10 +48,14 @@ Partial Class Articulos
         Me.StockTextBox = New System.Windows.Forms.TextBox
         Me.Stock_MinimoTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
-        Me.TipoComboBox = New System.Windows.Forms.ComboBox
         Me.Button2 = New System.Windows.Forms.Button
+        Me.TipoComboBox = New System.Windows.Forms.ComboBox
+        Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CategoriaTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
+        Me.TipoMaterialBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Tipo_MaterialTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.Tipo_MaterialTableAdapter
         Id_ArticuloLabel = New System.Windows.Forms.Label
         DescripcionLabel = New System.Windows.Forms.Label
         CategoriaLabel = New System.Windows.Forms.Label
@@ -63,6 +67,8 @@ Partial Class Articulos
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TipoMaterialBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Id_ArticuloLabel
@@ -146,12 +152,12 @@ Partial Class Articulos
         '
         Me.TableAdapterManager.ArticuloTableAdapter = Me.ArticuloTableAdapter
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CategoriaTableAdapter = Nothing
+        Me.TableAdapterManager.CategoriaTableAdapter = Me.CategoriaTableAdapter
         Me.TableAdapterManager.ClienteTableAdapter = Nothing
         Me.TableAdapterManager.EmpleadoTableAdapter = Nothing
         Me.TableAdapterManager.LocalidadTableAdapter = Nothing
         Me.TableAdapterManager.SucursalTableAdapter = Nothing
-        Me.TableAdapterManager.Tipo_MaterialTableAdapter = Nothing
+        Me.TableAdapterManager.Tipo_MaterialTableAdapter = Me.Tipo_MaterialTableAdapter
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.VentasTableAdapter = Nothing
         '
@@ -262,23 +268,14 @@ Partial Class Articulos
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         '
-        'Button1
+        'Button2
         '
-        Me.Button1.Location = New System.Drawing.Point(86, 221)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Agregar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'CategoriaComboBox
-        '
-        Me.CategoriaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
-        Me.CategoriaComboBox.FormattingEnabled = True
-        Me.CategoriaComboBox.Location = New System.Drawing.Point(86, 80)
-        Me.CategoriaComboBox.Name = "CategoriaComboBox"
-        Me.CategoriaComboBox.Size = New System.Drawing.Size(100, 21)
-        Me.CategoriaComboBox.TabIndex = 2
+        Me.Button2.Location = New System.Drawing.Point(86, 250)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 23)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Eliminar"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'TipoComboBox
         '
@@ -289,14 +286,41 @@ Partial Class Articulos
         Me.TipoComboBox.Size = New System.Drawing.Size(100, 21)
         Me.TipoComboBox.TabIndex = 3
         '
-        'Button2
+        'CategoriaComboBox
         '
-        Me.Button2.Location = New System.Drawing.Point(86, 250)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Eliminar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.CategoriaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
+        Me.CategoriaComboBox.FormattingEnabled = True
+        Me.CategoriaComboBox.Location = New System.Drawing.Point(86, 80)
+        Me.CategoriaComboBox.Name = "CategoriaComboBox"
+        Me.CategoriaComboBox.Size = New System.Drawing.Size(100, 21)
+        Me.CategoriaComboBox.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(86, 221)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Agregar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'CategoriaBindingSource
+        '
+        Me.CategoriaBindingSource.DataMember = "Categoria"
+        Me.CategoriaBindingSource.DataSource = Me.MuebleriaDataSet
+        '
+        'CategoriaTableAdapter
+        '
+        Me.CategoriaTableAdapter.ClearBeforeFill = True
+        '
+        'TipoMaterialBindingSource
+        '
+        Me.TipoMaterialBindingSource.DataMember = "Tipo_Material"
+        Me.TipoMaterialBindingSource.DataSource = Me.MuebleriaDataSet
+        '
+        'Tipo_MaterialTableAdapter
+        '
+        Me.Tipo_MaterialTableAdapter.ClearBeforeFill = True
         '
         'Articulos
         '
@@ -323,6 +347,8 @@ Partial Class Articulos
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArticuloDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TipoMaterialBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -349,4 +375,8 @@ Partial Class Articulos
     Friend WithEvents TipoComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents CategoriaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents CategoriaTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
+    Friend WithEvents CategoriaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Tipo_MaterialTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.Tipo_MaterialTableAdapter
+    Friend WithEvents TipoMaterialBindingSource As System.Windows.Forms.BindingSource
 End Class

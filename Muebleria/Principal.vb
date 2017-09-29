@@ -161,7 +161,10 @@
 
     End Sub
 
-    Private Sub ArticuloDataGridView_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles ArticuloDataGridView.DoubleClick
 
+    Private Sub AjusteDeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AjusteDeToolStripMenuItem.Click
+
+
+        Ajuste_de_Stock.Show()
     End Sub
 End Class

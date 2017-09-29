@@ -1,6 +1,7 @@
 ﻿Public Class Actualizar_Precios
 
     Private Sub ArticuloBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
         Me.Validate()
         Me.ArticuloBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
@@ -8,6 +9,8 @@
     End Sub
 
     Private Sub Actualizar_Precios_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Categoria' Puede moverla o quitarla según sea necesario.
+        Me.CategoriaTableAdapter.Fill(Me.MuebleriaDataSet.Categoria)
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Articulo' Puede moverla o quitarla según sea necesario.
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
         ' Me.ArticuloBindingSource.AddNew()
@@ -56,15 +59,6 @@
 
     End Sub
 
-    Private Sub TextBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox1.KeyDown
-
-        
-
-
-
-    End Sub
-
-
 
     Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
 
@@ -94,8 +88,31 @@
     
 
     Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
-       
 
+        Dim vista As New DataView
+        vista.Table = Me.MuebleriaDataSet.Articulo
+        vista.RowFilter = "Id_Articulo = " & Val(Me.TextBox1.Text)
+        Me.ArticuloDataGridView.DataSource = vista
+
+        'consulta 2
+        Dim fila As Integer
+        If TextBox1.Text <> "" Then
+            fila = Me.ArticuloBindingSource.Find("Id_Articulo", TextBox1.Text) 'busca la fila del registro.
+            If fila = -1 Then ' Si no se encuentra el articulo muestra un mensaje.
+                MsgBox("El articulo ingresado no se encuentra o no existe.")
+            Else
+                ArticuloBindingSource.Position = fila
+                DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
+                CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
+                TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
+                PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+                StockTextBox.Text = ArticuloBindingSource.Current("Stock")
+                Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+            End If
+        End If
+        
+
+        
 
     End Sub
         

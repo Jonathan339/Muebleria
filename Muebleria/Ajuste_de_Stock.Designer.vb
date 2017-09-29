@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Actualizar_Precios
+Partial Class Ajuste_de_Stock
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -34,16 +34,6 @@ Partial Class Actualizar_Precios
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArticuloTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.ArticuloTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
-        Me.CategoriaTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
-        Me.DescripcionTextBox = New System.Windows.Forms.TextBox
-        Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
-        Me.TipoComboBox = New System.Windows.Forms.ComboBox
-        Me.PrecioTextBox = New System.Windows.Forms.TextBox
-        Me.StockTextBox = New System.Windows.Forms.TextBox
-        Me.Stock_MinimoTextBox = New System.Windows.Forms.TextBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.Button1 = New System.Windows.Forms.Button
         Me.ArticuloDataGridView = New System.Windows.Forms.DataGridView
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -52,7 +42,15 @@ Partial Class Actualizar_Precios
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.Id_ArticuloTextBox = New System.Windows.Forms.TextBox
+        Me.DescripcionTextBox = New System.Windows.Forms.TextBox
+        Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
+        Me.TipoComboBox = New System.Windows.Forms.ComboBox
+        Me.PrecioTextBox = New System.Windows.Forms.TextBox
+        Me.StockTextBox = New System.Windows.Forms.TextBox
+        Me.Stock_MinimoTextBox = New System.Windows.Forms.TextBox
         Id_ArticuloLabel = New System.Windows.Forms.Label
         DescripcionLabel = New System.Windows.Forms.Label
         CategoriaLabel = New System.Windows.Forms.Label
@@ -62,72 +60,71 @@ Partial Class Actualizar_Precios
         Stock_MinimoLabel = New System.Windows.Forms.Label
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.ArticuloDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Id_ArticuloLabel
         '
         Id_ArticuloLabel.AutoSize = True
-        Id_ArticuloLabel.Location = New System.Drawing.Point(6, 24)
+        Id_ArticuloLabel.Location = New System.Drawing.Point(6, 32)
         Id_ArticuloLabel.Name = "Id_ArticuloLabel"
         Id_ArticuloLabel.Size = New System.Drawing.Size(57, 13)
-        Id_ArticuloLabel.TabIndex = 1
+        Id_ArticuloLabel.TabIndex = 0
         Id_ArticuloLabel.Text = "Id Articulo:"
         '
         'DescripcionLabel
         '
         DescripcionLabel.AutoSize = True
-        DescripcionLabel.Location = New System.Drawing.Point(6, 50)
+        DescripcionLabel.Location = New System.Drawing.Point(6, 58)
         DescripcionLabel.Name = "DescripcionLabel"
         DescripcionLabel.Size = New System.Drawing.Size(66, 13)
-        DescripcionLabel.TabIndex = 3
+        DescripcionLabel.TabIndex = 2
         DescripcionLabel.Text = "Descripcion:"
         '
         'CategoriaLabel
         '
         CategoriaLabel.AutoSize = True
-        CategoriaLabel.Location = New System.Drawing.Point(6, 76)
+        CategoriaLabel.Location = New System.Drawing.Point(6, 84)
         CategoriaLabel.Name = "CategoriaLabel"
         CategoriaLabel.Size = New System.Drawing.Size(55, 13)
-        CategoriaLabel.TabIndex = 5
+        CategoriaLabel.TabIndex = 4
         CategoriaLabel.Text = "Categoria:"
         '
         'TipoLabel
         '
         TipoLabel.AutoSize = True
-        TipoLabel.Location = New System.Drawing.Point(6, 103)
+        TipoLabel.Location = New System.Drawing.Point(6, 111)
         TipoLabel.Name = "TipoLabel"
         TipoLabel.Size = New System.Drawing.Size(31, 13)
-        TipoLabel.TabIndex = 7
+        TipoLabel.TabIndex = 6
         TipoLabel.Text = "Tipo:"
         '
         'PrecioLabel
         '
         PrecioLabel.AutoSize = True
-        PrecioLabel.Location = New System.Drawing.Point(6, 130)
+        PrecioLabel.Location = New System.Drawing.Point(6, 138)
         PrecioLabel.Name = "PrecioLabel"
         PrecioLabel.Size = New System.Drawing.Size(40, 13)
-        PrecioLabel.TabIndex = 9
+        PrecioLabel.TabIndex = 8
         PrecioLabel.Text = "Precio:"
         '
         'StockLabel
         '
         StockLabel.AutoSize = True
-        StockLabel.Location = New System.Drawing.Point(6, 156)
+        StockLabel.Location = New System.Drawing.Point(6, 164)
         StockLabel.Name = "StockLabel"
         StockLabel.Size = New System.Drawing.Size(38, 13)
-        StockLabel.TabIndex = 11
+        StockLabel.TabIndex = 10
         StockLabel.Text = "Stock:"
         '
         'Stock_MinimoLabel
         '
         Stock_MinimoLabel.AutoSize = True
-        Stock_MinimoLabel.Location = New System.Drawing.Point(6, 182)
+        Stock_MinimoLabel.Location = New System.Drawing.Point(6, 190)
         Stock_MinimoLabel.Name = "Stock_MinimoLabel"
         Stock_MinimoLabel.Size = New System.Drawing.Size(74, 13)
-        Stock_MinimoLabel.TabIndex = 13
+        Stock_MinimoLabel.TabIndex = 12
         Stock_MinimoLabel.Text = "Stock Minimo:"
         '
         'MuebleriaDataSet
@@ -148,7 +145,7 @@ Partial Class Actualizar_Precios
         '
         Me.TableAdapterManager.ArticuloTableAdapter = Me.ArticuloTableAdapter
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.CategoriaTableAdapter = Me.CategoriaTableAdapter
+        Me.TableAdapterManager.CategoriaTableAdapter = Nothing
         Me.TableAdapterManager.ClienteTableAdapter = Nothing
         Me.TableAdapterManager.EmpleadoTableAdapter = Nothing
         Me.TableAdapterManager.LocalidadTableAdapter = Nothing
@@ -157,120 +154,21 @@ Partial Class Actualizar_Precios
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.VentasTableAdapter = Nothing
         '
-        'CategoriaTableAdapter
-        '
-        Me.CategoriaTableAdapter.ClearBeforeFill = True
-        '
-        'DescripcionTextBox
-        '
-        Me.DescripcionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
-        Me.DescripcionTextBox.Enabled = False
-        Me.DescripcionTextBox.Location = New System.Drawing.Point(86, 47)
-        Me.DescripcionTextBox.Name = "DescripcionTextBox"
-        Me.DescripcionTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.DescripcionTextBox.TabIndex = 4
-        '
-        'CategoriaComboBox
-        '
-        Me.CategoriaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
-        Me.CategoriaComboBox.Enabled = False
-        Me.CategoriaComboBox.FormattingEnabled = True
-        Me.CategoriaComboBox.Location = New System.Drawing.Point(86, 73)
-        Me.CategoriaComboBox.Name = "CategoriaComboBox"
-        Me.CategoriaComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.CategoriaComboBox.TabIndex = 6
-        '
-        'TipoComboBox
-        '
-        Me.TipoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Tipo", True))
-        Me.TipoComboBox.Enabled = False
-        Me.TipoComboBox.FormattingEnabled = True
-        Me.TipoComboBox.Location = New System.Drawing.Point(86, 100)
-        Me.TipoComboBox.Name = "TipoComboBox"
-        Me.TipoComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.TipoComboBox.TabIndex = 8
-        '
-        'PrecioTextBox
-        '
-        Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Precio", True))
-        Me.PrecioTextBox.Location = New System.Drawing.Point(86, 127)
-        Me.PrecioTextBox.Name = "PrecioTextBox"
-        Me.PrecioTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.PrecioTextBox.TabIndex = 10
-        '
-        'StockTextBox
-        '
-        Me.StockTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
-        Me.StockTextBox.Enabled = False
-        Me.StockTextBox.Location = New System.Drawing.Point(86, 153)
-        Me.StockTextBox.Name = "StockTextBox"
-        Me.StockTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.StockTextBox.TabIndex = 12
-        '
-        'Stock_MinimoTextBox
-        '
-        Me.Stock_MinimoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock_Minimo", True))
-        Me.Stock_MinimoTextBox.Enabled = False
-        Me.Stock_MinimoTextBox.Location = New System.Drawing.Point(86, 179)
-        Me.Stock_MinimoTextBox.Name = "Stock_MinimoTextBox"
-        Me.Stock_MinimoTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.Stock_MinimoTextBox.TabIndex = 14
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Id_ArticuloLabel)
-        Me.GroupBox1.Controls.Add(Stock_MinimoLabel)
-        Me.GroupBox1.Controls.Add(Me.Stock_MinimoTextBox)
-        Me.GroupBox1.Controls.Add(DescripcionLabel)
-        Me.GroupBox1.Controls.Add(Me.StockTextBox)
-        Me.GroupBox1.Controls.Add(Me.DescripcionTextBox)
-        Me.GroupBox1.Controls.Add(StockLabel)
-        Me.GroupBox1.Controls.Add(CategoriaLabel)
-        Me.GroupBox1.Controls.Add(Me.PrecioTextBox)
-        Me.GroupBox1.Controls.Add(Me.CategoriaComboBox)
-        Me.GroupBox1.Controls.Add(PrecioLabel)
-        Me.GroupBox1.Controls.Add(TipoLabel)
-        Me.GroupBox1.Controls.Add(Me.TipoComboBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(239, 271)
-        Me.GroupBox1.TabIndex = 15
-        Me.GroupBox1.TabStop = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(86, 21)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 16
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(86, 218)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(121, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Modificar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'ArticuloDataGridView
         '
+        Me.ArticuloDataGridView.AllowUserToOrderColumns = True
         Me.ArticuloDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ArticuloDataGridView.AutoGenerateColumns = False
+        Me.ArticuloDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ArticuloDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ArticuloDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.ArticuloDataGridView.DataSource = Me.ArticuloBindingSource
-        Me.ArticuloDataGridView.Location = New System.Drawing.Point(266, 23)
+        Me.ArticuloDataGridView.Location = New System.Drawing.Point(218, 21)
         Me.ArticuloDataGridView.Name = "ArticuloDataGridView"
-        Me.ArticuloDataGridView.Size = New System.Drawing.Size(468, 260)
-        Me.ArticuloDataGridView.TabIndex = 15
+        Me.ArticuloDataGridView.Size = New System.Drawing.Size(522, 254)
+        Me.ArticuloDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
         '
@@ -315,26 +213,115 @@ Partial Class Actualizar_Precios
         Me.DataGridViewTextBoxColumn7.HeaderText = "Stock_Minimo"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
-        'CategoriaBindingSource
+        'GroupBox1
         '
-        Me.CategoriaBindingSource.DataMember = "Categoria"
-        Me.CategoriaBindingSource.DataSource = Me.MuebleriaDataSet
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Id_ArticuloLabel)
+        Me.GroupBox1.Controls.Add(Me.Id_ArticuloTextBox)
+        Me.GroupBox1.Controls.Add(DescripcionLabel)
+        Me.GroupBox1.Controls.Add(Me.DescripcionTextBox)
+        Me.GroupBox1.Controls.Add(CategoriaLabel)
+        Me.GroupBox1.Controls.Add(Me.CategoriaComboBox)
+        Me.GroupBox1.Controls.Add(TipoLabel)
+        Me.GroupBox1.Controls.Add(Me.TipoComboBox)
+        Me.GroupBox1.Controls.Add(PrecioLabel)
+        Me.GroupBox1.Controls.Add(Me.PrecioTextBox)
+        Me.GroupBox1.Controls.Add(StockLabel)
+        Me.GroupBox1.Controls.Add(Me.StockTextBox)
+        Me.GroupBox1.Controls.Add(Stock_MinimoLabel)
+        Me.GroupBox1.Controls.Add(Me.Stock_MinimoTextBox)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 21)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 256)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
         '
-        'Actualizar_Precios
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(86, 227)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Guardar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Id_ArticuloTextBox
+        '
+        Me.Id_ArticuloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Id_Articulo", True))
+        Me.Id_ArticuloTextBox.Location = New System.Drawing.Point(86, 29)
+        Me.Id_ArticuloTextBox.Name = "Id_ArticuloTextBox"
+        Me.Id_ArticuloTextBox.Size = New System.Drawing.Size(98, 20)
+        Me.Id_ArticuloTextBox.TabIndex = 1
+        '
+        'DescripcionTextBox
+        '
+        Me.DescripcionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
+        Me.DescripcionTextBox.Enabled = False
+        Me.DescripcionTextBox.Location = New System.Drawing.Point(86, 55)
+        Me.DescripcionTextBox.Name = "DescripcionTextBox"
+        Me.DescripcionTextBox.Size = New System.Drawing.Size(98, 20)
+        Me.DescripcionTextBox.TabIndex = 3
+        '
+        'CategoriaComboBox
+        '
+        Me.CategoriaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
+        Me.CategoriaComboBox.Enabled = False
+        Me.CategoriaComboBox.FormattingEnabled = True
+        Me.CategoriaComboBox.Location = New System.Drawing.Point(86, 81)
+        Me.CategoriaComboBox.Name = "CategoriaComboBox"
+        Me.CategoriaComboBox.Size = New System.Drawing.Size(98, 21)
+        Me.CategoriaComboBox.TabIndex = 5
+        '
+        'TipoComboBox
+        '
+        Me.TipoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Tipo", True))
+        Me.TipoComboBox.Enabled = False
+        Me.TipoComboBox.FormattingEnabled = True
+        Me.TipoComboBox.Location = New System.Drawing.Point(86, 108)
+        Me.TipoComboBox.Name = "TipoComboBox"
+        Me.TipoComboBox.Size = New System.Drawing.Size(98, 21)
+        Me.TipoComboBox.TabIndex = 7
+        '
+        'PrecioTextBox
+        '
+        Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Precio", True))
+        Me.PrecioTextBox.Enabled = False
+        Me.PrecioTextBox.Location = New System.Drawing.Point(86, 135)
+        Me.PrecioTextBox.Name = "PrecioTextBox"
+        Me.PrecioTextBox.Size = New System.Drawing.Size(98, 20)
+        Me.PrecioTextBox.TabIndex = 9
+        '
+        'StockTextBox
+        '
+        Me.StockTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
+        Me.StockTextBox.Location = New System.Drawing.Point(86, 161)
+        Me.StockTextBox.Name = "StockTextBox"
+        Me.StockTextBox.Size = New System.Drawing.Size(98, 20)
+        Me.StockTextBox.TabIndex = 11
+        '
+        'Stock_MinimoTextBox
+        '
+        Me.Stock_MinimoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock_Minimo", True))
+        Me.Stock_MinimoTextBox.Location = New System.Drawing.Point(86, 187)
+        Me.Stock_MinimoTextBox.Name = "Stock_MinimoTextBox"
+        Me.Stock_MinimoTextBox.Size = New System.Drawing.Size(98, 20)
+        Me.Stock_MinimoTextBox.TabIndex = 13
+        '
+        'Ajuste_de_Stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(760, 303)
-        Me.Controls.Add(Me.ArticuloDataGridView)
+        Me.ClientSize = New System.Drawing.Size(752, 289)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "Actualizar_Precios"
-        Me.Text = "Actualizar_Precios"
+        Me.Controls.Add(Me.ArticuloDataGridView)
+        Me.MaximizeBox = False
+        Me.Name = "Ajuste_de_Stock"
+        Me.Text = "Ajuste_de_Stock"
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArticuloDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.ArticuloDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -342,14 +329,6 @@ Partial Class Actualizar_Precios
     Friend WithEvents ArticuloBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ArticuloTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.ArticuloTableAdapter
     Friend WithEvents TableAdapterManager As WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents DescripcionTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents CategoriaComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents TipoComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents PrecioTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents StockTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Stock_MinimoTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ArticuloDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -358,7 +337,13 @@ Partial Class Actualizar_Precios
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents CategoriaTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
-    Friend WithEvents CategoriaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Id_ArticuloTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DescripcionTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents CategoriaComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents TipoComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents PrecioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents StockTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Stock_MinimoTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
