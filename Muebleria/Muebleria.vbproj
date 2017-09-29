@@ -140,7 +140,6 @@
     <Compile Include="Proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sql.vb" />
     <Compile Include="Stock.Designer.vb">
       <DependentUpon>Stock.vb</DependentUpon>
     </Compile>

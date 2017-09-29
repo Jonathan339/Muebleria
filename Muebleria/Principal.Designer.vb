@@ -31,7 +31,9 @@ Partial Class Principal
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarModificarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.MostrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VendedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MuebleriaDataSet = New WindowsApplication1.MuebleriaDataSet
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -49,8 +51,6 @@ Partial Class Principal
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
-        Me.MostrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,12 +112,24 @@ Partial Class Principal
         Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
+        'MostrarVentasToolStripMenuItem
+        '
+        Me.MostrarVentasToolStripMenuItem.Name = "MostrarVentasToolStripMenuItem"
+        Me.MostrarVentasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MostrarVentasToolStripMenuItem.Text = "Mostrar ventas"
+        '
         'VendedoresToolStripMenuItem
         '
         Me.VendedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem})
         Me.VendedoresToolStripMenuItem.Name = "VendedoresToolStripMenuItem"
         Me.VendedoresToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.VendedoresToolStripMenuItem.Text = "Vendedores"
+        '
+        'EmpleadosToolStripMenuItem
+        '
+        Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.EmpleadosToolStripMenuItem.Text = "Agregar empleado"
         '
         'SalirToolStripMenuItem
         '
@@ -245,18 +257,6 @@ Partial Class Principal
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Buscar por"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'MostrarVentasToolStripMenuItem
-        '
-        Me.MostrarVentasToolStripMenuItem.Name = "MostrarVentasToolStripMenuItem"
-        Me.MostrarVentasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.MostrarVentasToolStripMenuItem.Text = "Mostrar ventas"
-        '
-        'EmpleadosToolStripMenuItem
-        '
-        Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.EmpleadosToolStripMenuItem.Text = "Agregar empleado"
         '
         'Principal
         '

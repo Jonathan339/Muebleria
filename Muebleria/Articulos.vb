@@ -53,6 +53,9 @@
 
     Private Sub Id_ArticuloTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_ArticuloTextBox.TextChanged
 
+
+
+
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -77,9 +80,6 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim aux As Integer
-
-        aux = MsgBox("¿Quiere eliminar este registro?" & 1 + 32 & "Eliminar")
 
 
     End Sub

@@ -10,6 +10,8 @@
         Articulo_Busqueda.Show()
     End Sub
 
+   
+
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Articulo' Puede moverla o quitarla según sea necesario.
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
@@ -57,19 +59,36 @@
 
         'busqueda con combobox
 
-        Dim fila As Integer
         If ComboBox1.SelectedItem <> "" And TextBox1.Text <> "" Then
-            fila = Me.ArticuloBindingSource.Find(Me.ComboBox1.SelectedItem, TextBox1.Text)
-            If fila <> -1 Then
-                ArticuloBindingSource.Position = fila
-                Me.DataGridViewTextBoxColumn1.Name = ArticuloBindingSource.Current("Id_Articulo")
-                Me.DataGridViewTextBoxColumn2.Name = ArticuloBindingSource.Current("Descripcion")
-                Me.DataGridViewTextBoxColumn3.Name = ArticuloBindingSource.Current("Categoria")
-                Me.DataGridViewTextBoxColumn4.Name = ArticuloBindingSource.Current("Tipo")
-                Me.DataGridViewTextBoxColumn5.Name = ArticuloBindingSource.Current("Precio")
-                Me.DataGridViewTextBoxColumn6.Name = ArticuloBindingSource.Current("Stock")
-                Me.DataGridViewTextBoxColumn7.Name = ArticuloBindingSource.Current("Stock_Minimo")
+            If ComboBox1.SelectedItem = "Id_Articulo" Then
+                If IsNumeric(TextBox1.Text) Then
+                    Dim vista As New DataView
+                    vista.Table = Me.MuebleriaDataSet.Articulo
+                    vista.RowFilter = "Id_Articulo = " & Val(Me.TextBox1.Text)
+                    Me.ArticuloDataGridView.DataSource = vista
+                Else
+                    MsgBox("El ID debe ser un numero sin letras.")
+                End If
+
+
+            ElseIf ComboBox1.SelectedItem = "Descripcion" Then
+                Dim vista As New DataView
+                vista.Table = Me.MuebleriaDataSet.Articulo
+                vista.RowFilter = "Descripcion like '" & Me.TextBox1.Text & "%'"
+                Me.ArticuloDataGridView.DataSource = vista
+
+            ElseIf ComboBox1.SelectedItem = "Categoria" Then
+
+            ElseIf ComboBox1.SelectedItem = "Tipo" Then
+                Dim vista As New DataView
+                vista.Table = Me.MuebleriaDataSet.Articulo
+                vista.RowFilter = "Tipo like '" & Me.TextBox1.Text & "%'"
+                Me.ArticuloDataGridView.DataSource = vista
+
             End If
+
+        Else
+            MsgBox("Porfavor ingrese datos.")
         End If
 
 
@@ -94,5 +113,55 @@
 
         'form clientes
         Cliente.Show()
+    End Sub
+
+    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+
+        If Asc(e.KeyChar) = 13 Then
+            If ComboBox1.SelectedItem <> "" And TextBox1.Text <> "" Then
+                If ComboBox1.SelectedItem = "Id_Articulo" Then
+                    If IsNumeric(TextBox1.Text) Then
+                        Dim vista As New DataView
+                        vista.Table = Me.MuebleriaDataSet.Articulo
+                        vista.RowFilter = "Id_Articulo = " & Val(Me.TextBox1.Text)
+                        Me.ArticuloDataGridView.DataSource = vista
+                    Else
+                        MsgBox("El ID debe ser un numero sin letras.")
+                    End If
+                    
+
+                ElseIf ComboBox1.SelectedItem = "Descripcion" Then
+                    Dim vista As New DataView
+                    vista.Table = Me.MuebleriaDataSet.Articulo
+                    vista.RowFilter = "Descripcion like '" & Me.TextBox1.Text & "%'"
+                    Me.ArticuloDataGridView.DataSource = vista
+
+                ElseIf ComboBox1.SelectedItem = "Categoria" Then
+
+                ElseIf ComboBox1.SelectedItem = "Tipo" Then
+                    Dim vista As New DataView
+                    vista.Table = Me.MuebleriaDataSet.Articulo
+                    vista.RowFilter = "Tipo like '" & Me.TextBox1.Text & "%'"
+                    Me.ArticuloDataGridView.DataSource = vista
+
+                End If
+
+            Else
+                MsgBox("Porfavor ingrese datos.")
+            End If
+        End If
+
+
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+
+        
+
+    End Sub
+
+    Private Sub ArticuloDataGridView_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles ArticuloDataGridView.DoubleClick
+
     End Sub
 End Class
