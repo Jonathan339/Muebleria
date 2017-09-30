@@ -181,18 +181,18 @@
             ArticuloBindingSource.Position = fila ' mover el cursor a la fila obtenida con esto muestro
             aux = MsgBox("¿Quiere realizar esta venta?", 32 + 1, "Ventar")
             If aux = 1 Then
-                If ArticuloBindingSource.Current("Stock") >= ArticuloBindingSource.Current("Stock_Minimo") Then
-                    Vender.Show()
-                    Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
-                    Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
-                    Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
-                    Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-                    Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
-                    Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
 
-                End If
-            End If
+                Vender.Show()
+                Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
+                Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
+                Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
+                Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
+                Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+                Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
+                Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+
+
+        End If
         End If
 
 
