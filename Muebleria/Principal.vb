@@ -59,6 +59,7 @@
 
         'busqueda con combobox
 
+
         If ComboBox1.SelectedItem <> "" And TextBox1.Text <> "" Then
             If ComboBox1.SelectedItem = "Id_Articulo" Then
                 If IsNumeric(TextBox1.Text) Then
@@ -178,15 +179,18 @@
             Else
                 'se encontro
                 ArticuloBindingSource.Position = fila ' mover el cursor a la fila obtenida con esto muestro
-                aux = MsgBox("¿Quiere realizar esta venta?", 32 + 1, "Ventar")
+                aux = MsgBox("¿Quiere realizar esta venta?", 32 + 1, "¿Vender?")
                 If aux = 1 Then
 
                     Vender.Show()
                     Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    Vender.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
+
                     Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
                     Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
                     Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
                     Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+                    'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
                     Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
                     Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
 

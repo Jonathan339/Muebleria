@@ -132,6 +132,7 @@ Partial Class Vender
         'DescripcionTextBox
         '
         Me.DescripcionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
+        Me.DescripcionTextBox.Enabled = False
         Me.DescripcionTextBox.Location = New System.Drawing.Point(104, 82)
         Me.DescripcionTextBox.Name = "DescripcionTextBox"
         Me.DescripcionTextBox.Size = New System.Drawing.Size(121, 20)
@@ -149,6 +150,7 @@ Partial Class Vender
         'CategoriaComboBox
         '
         Me.CategoriaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
+        Me.CategoriaComboBox.Enabled = False
         Me.CategoriaComboBox.FormattingEnabled = True
         Me.CategoriaComboBox.Location = New System.Drawing.Point(104, 108)
         Me.CategoriaComboBox.Name = "CategoriaComboBox"
@@ -167,6 +169,7 @@ Partial Class Vender
         'TipoComboBox
         '
         Me.TipoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Tipo", True))
+        Me.TipoComboBox.Enabled = False
         Me.TipoComboBox.FormattingEnabled = True
         Me.TipoComboBox.Location = New System.Drawing.Point(104, 135)
         Me.TipoComboBox.Name = "TipoComboBox"
@@ -185,6 +188,7 @@ Partial Class Vender
         'PrecioTextBox
         '
         Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Precio", True))
+        Me.PrecioTextBox.Enabled = False
         Me.PrecioTextBox.Location = New System.Drawing.Point(104, 162)
         Me.PrecioTextBox.Name = "PrecioTextBox"
         Me.PrecioTextBox.Size = New System.Drawing.Size(121, 20)
@@ -202,6 +206,7 @@ Partial Class Vender
         'StockTextBox
         '
         Me.StockTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
+        Me.StockTextBox.Enabled = False
         Me.StockTextBox.Location = New System.Drawing.Point(104, 188)
         Me.StockTextBox.Name = "StockTextBox"
         Me.StockTextBox.Size = New System.Drawing.Size(121, 20)
@@ -219,6 +224,7 @@ Partial Class Vender
         'Stock_MinimoTextBox
         '
         Me.Stock_MinimoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock_Minimo", True))
+        Me.Stock_MinimoTextBox.Enabled = False
         Me.Stock_MinimoTextBox.Location = New System.Drawing.Point(104, 214)
         Me.Stock_MinimoTextBox.Name = "Stock_MinimoTextBox"
         Me.Stock_MinimoTextBox.Size = New System.Drawing.Size(121, 20)
@@ -263,6 +269,7 @@ Partial Class Vender
         'Id_VentasTextBox
         '
         Me.Id_VentasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Ventas", True))
+        Me.Id_VentasTextBox.Enabled = False
         Me.Id_VentasTextBox.Location = New System.Drawing.Point(382, 60)
         Me.Id_VentasTextBox.Name = "Id_VentasTextBox"
         Me.Id_VentasTextBox.Size = New System.Drawing.Size(200, 20)
@@ -360,7 +367,7 @@ Partial Class Vender
         '
         'Importe
         '
-        Me.Importe.Location = New System.Drawing.Point(84, 178)
+        Me.Importe.Location = New System.Drawing.Point(84, 175)
         Me.Importe.Name = "Importe"
         Me.Importe.Size = New System.Drawing.Size(100, 20)
         Me.Importe.TabIndex = 4
@@ -426,8 +433,8 @@ Partial Class Vender
     Friend WithEvents FechaDateTimePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents Id_clienteTextBox As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Importe As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Importe As System.Windows.Forms.TextBox
 End Class
