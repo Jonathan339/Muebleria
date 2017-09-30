@@ -146,6 +146,12 @@
     <Compile Include="Proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Proveedores.Designer.vb">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Stock.Designer.vb">
       <DependentUpon>Stock.vb</DependentUpon>
     </Compile>
@@ -156,6 +162,12 @@
       <DependentUpon>Vendedores.vb</DependentUpon>
     </Compile>
     <Compile Include="Vendedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vender.Designer.vb">
+      <DependentUpon>Vender.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vender.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.Designer.vb">
@@ -206,6 +218,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedores.resx">
       <DependentUpon>Vendedores.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vender.resx">
+      <DependentUpon>Vender.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
