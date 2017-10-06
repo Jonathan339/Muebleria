@@ -10,6 +10,8 @@
     Private Sub Ventas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Ventas' Puede moverla o quitarla según sea necesario.
         Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+        '--------------------
+
 
     End Sub
 
@@ -49,6 +51,19 @@
 
 
 
+
+    End Sub
+
+    Private Sub Id_ArticuloTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_ArticuloTextBox.TextChanged
+
+
+        Dim vista As New DataView
+        If Id_ArticuloTextBox.Text <> "" Then
+
+            vista.Table = Me.MuebleriaDataSet.Articulo
+            vista.RowFilter = "Id_Articulo = " & Val(Id_ArticuloTextBox.Text)
+            Me.VentasDataGridView.DataSource = vista
+        End If
 
     End Sub
 End Class

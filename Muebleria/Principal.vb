@@ -183,14 +183,14 @@
                 If aux = 1 Then
 
                     Vender.Show()
+
                     Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
                     Vender.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
-
                     Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
                     Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
                     Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
                     Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-                    'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
+                    Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
                     Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
                     Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
 
@@ -204,6 +204,10 @@
         
 
 
+
+    End Sub
+
+    Private Sub BuscarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
 
     End Sub
 End Class

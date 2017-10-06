@@ -14,31 +14,8 @@
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
 
-
-
-        '-----------------------------------------------------------
-        If ArticuloBindingSource.Current("Id_Articulo") = Val(Id_ArticuloTextBox.Text) Then
-            DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
-            CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
-            TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
-            PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-            StockTextBox.Text = ArticuloBindingSource.Current("Stock")
-            Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
-        End If
-        
-        
-        '-------------------------------------------------------------
-
-        Importe.Text = ArticuloBindingSource.Current("Precio")
-
-        If NumericUpDown1.Value > 1 Then
-            Importe.Text = Val(Importe.Text) * NumericUpDown1.Value
-        End If
-
-
-        'Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
-        'Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo)
-
+        '-------------------------------------------------------
+        Me.VentasBindingSource.AddNew() 'agregar preparo la bd
 
 
 
@@ -48,17 +25,91 @@
 
         'boton vender
 
+        Dim fila, CodConsulta, aux, importe As Integer
+        CodConsulta = Val(Id_ArticuloTextBox.Text)
+        fila = Me.ArticuloBindingSource.Find("Id_articulo", CodConsulta) 'me dice la posicion arranca de 0
+        If fila = -1 Then
+            'no se encontro ultimo registro es -1
+            MsgBox("El registro no se encontro")
+        Else
+            'Se encontro
+            ArticuloBindingSource.Position = fila ' Mover el cursor a la fila obtenida con esto muestro
+            aux = MsgBox("Quiere realizar esta venta Cod_articulo: " & CodConsulta, 32 + 1, "Vender")
+            If aux = 1 Then
+                If ArticuloBindingSource.Current("Stock") >= Val(Cantidad.Text) Then 'si true puedo alquilar
+
+                    Me.ArticuloBindingSource.Current("Stock") = ArticuloBindingSource.Current("Stock") - Val(Cantidad.Text)
+
+
+                    Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet) 'grabo en disco
+                    '--------------------------------
+
+                    Me.VentasBindingSource.Current("Id_Articulo") = Val(Id_ArticuloTextBox.Text)
+                    Me.VentasBindingSource.Current("Fecha") = FechaDateTimePicker.Text
+
+                    Me.VentasBindingSource.Current("Id_cliente") = Val(Id_clienteTextBox.Text)
+
+                    '--------------------------------
+
+                    Me.VentasBindingSource.AddNew() 'preparo la base para seguir agregado
+                    Me.ArticuloBindingSource.EndEdit() 'cierro bd
+
+
+                    Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+
+
+
+                    Me.VentasBindingSource.MoveLast()
+
+                    Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo) 'Para actualizar en el otro formulario la grilla
+
+                    Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo)
+
+
+
+                    importe = Val(Cantidad.Text) * Me.ArticuloBindingSource.Current("Precio")
+                    MsgBox("La venta a sido realizada con exito el importe es: " & importe & "  Pesos")
+                    Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo) 'Actualizo la grilla
+
+
+
+
+
+                    Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+
+                Else
+                    MsgBox("El stock es insuficiente, el stock actual es de: " & ArticuloBindingSource.Current("Cantidad") & " unidades")
+
+                    'limpiar(Me) 'funcion limpiar textbox
+
+                    Cantidad.Text = ""
+
+                    Cantidad.Focus()
+
+                End If
+            End If
+        End If
+
+
+
+    End Sub
+
+    
+
+    Private Sub Cantidad_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cantidad.TextChanged
+
+        'Dim imp_cantidad As Decimal = Me.ArticuloBindingSource.Current("Precio")
+
+        'imp_cantidad = Val(Importe.Text)
+
+        If Cantidad.Text <> "" Then
+
+            Importe.Text = Val(Cantidad.Text) * Val(Importe.Text)
         
-
-
+        End If
 
 
     End Sub
 
-    Private Sub NumericUpDown1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NumericUpDown1.ValueChanged
-
-       
-        'Importe.Text = NumericUpDown1.Value * Val(Importe.Text)
-
-    End Sub
+   
 End Class

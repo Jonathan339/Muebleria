@@ -113,6 +113,7 @@
     <Compile Include="Cliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>

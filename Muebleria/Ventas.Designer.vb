@@ -29,9 +29,11 @@ Partial Class Ventas
         Dim Id_clienteLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Id_VentasTextBox = New System.Windows.Forms.TextBox
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
         Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MuebleriaDataSet = New WindowsApplication1.MuebleriaDataSet
+        Me.Id_VentasTextBox = New System.Windows.Forms.TextBox
         Me.Id_ArticuloTextBox = New System.Windows.Forms.TextBox
         Me.FechaDateTimePicker = New System.Windows.Forms.DateTimePicker
         Me.Id_clienteTextBox = New System.Windows.Forms.TextBox
@@ -42,8 +44,6 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
-        Me.Button1 = New System.Windows.Forms.Button
         Id_VentasLabel = New System.Windows.Forms.Label
         Id_ArticuloLabel = New System.Windows.Forms.Label
         FechaLabel = New System.Windows.Forms.Label
@@ -91,6 +91,15 @@ Partial Class Ventas
         Id_clienteLabel.TabIndex = 6
         Id_clienteLabel.Text = "Id cliente:"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(6, 97)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(38, 13)
+        Label1.TabIndex = 8
+        Label1.Text = "Hasta:"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -110,13 +119,22 @@ Partial Class Ventas
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'Id_VentasTextBox
+        'Button1
         '
-        Me.Id_VentasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Ventas", True))
-        Me.Id_VentasTextBox.Location = New System.Drawing.Point(69, 13)
-        Me.Id_VentasTextBox.Name = "Id_VentasTextBox"
-        Me.Id_VentasTextBox.Size = New System.Drawing.Size(109, 20)
-        Me.Id_VentasTextBox.TabIndex = 1
+        Me.Button1.Location = New System.Drawing.Point(69, 143)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VentasBindingSource, "Fecha", True))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(69, 91)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(109, 20)
+        Me.DateTimePicker1.TabIndex = 9
         '
         'VentasBindingSource
         '
@@ -127,6 +145,14 @@ Partial Class Ventas
         '
         Me.MuebleriaDataSet.DataSetName = "MuebleriaDataSet"
         Me.MuebleriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Id_VentasTextBox
+        '
+        Me.Id_VentasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Ventas", True))
+        Me.Id_VentasTextBox.Location = New System.Drawing.Point(69, 13)
+        Me.Id_VentasTextBox.Name = "Id_VentasTextBox"
+        Me.Id_VentasTextBox.Size = New System.Drawing.Size(109, 20)
+        Me.Id_VentasTextBox.TabIndex = 1
         '
         'Id_ArticuloTextBox
         '
@@ -204,32 +230,6 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "Id_cliente"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Id_cliente"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(6, 97)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(38, 13)
-        Label1.TabIndex = 8
-        Label1.Text = "Hasta:"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VentasBindingSource, "Fecha", True))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(69, 91)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(109, 20)
-        Me.DateTimePicker1.TabIndex = 9
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(69, 143)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Ventas
         '

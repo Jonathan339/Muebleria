@@ -38,6 +38,7 @@ Partial Class Vender
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArticuloTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.ArticuloTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
+        Me.VentasTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.VentasTableAdapter
         Me.Id_ArticuloTextBox = New System.Windows.Forms.TextBox
         Me.DescripcionTextBox = New System.Windows.Forms.TextBox
         Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
@@ -48,16 +49,20 @@ Partial Class Vender
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VentasTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.VentasTableAdapter
         Me.Id_VentasTextBox = New System.Windows.Forms.TextBox
         Me.Id_ArticuloTextBox1 = New System.Windows.Forms.TextBox
         Me.FechaDateTimePicker = New System.Windows.Forms.DateTimePicker
         Me.Id_clienteTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
+        Me.Cantidad = New System.Windows.Forms.TextBox
         Me.Importe = New System.Windows.Forms.TextBox
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.VentasDataGridView = New System.Windows.Forms.DataGridView
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Id_ArticuloLabel = New System.Windows.Forms.Label
         DescripcionLabel = New System.Windows.Forms.Label
         CategoriaLabel = New System.Windows.Forms.Label
@@ -73,8 +78,107 @@ Partial Class Vender
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VentasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Id_ArticuloLabel
+        '
+        Id_ArticuloLabel.AutoSize = True
+        Id_ArticuloLabel.Location = New System.Drawing.Point(24, 59)
+        Id_ArticuloLabel.Name = "Id_ArticuloLabel"
+        Id_ArticuloLabel.Size = New System.Drawing.Size(57, 13)
+        Id_ArticuloLabel.TabIndex = 1
+        Id_ArticuloLabel.Text = "Id Articulo:"
+        '
+        'DescripcionLabel
+        '
+        DescripcionLabel.AutoSize = True
+        DescripcionLabel.Location = New System.Drawing.Point(24, 85)
+        DescripcionLabel.Name = "DescripcionLabel"
+        DescripcionLabel.Size = New System.Drawing.Size(66, 13)
+        DescripcionLabel.TabIndex = 3
+        DescripcionLabel.Text = "Descripcion:"
+        '
+        'CategoriaLabel
+        '
+        CategoriaLabel.AutoSize = True
+        CategoriaLabel.Location = New System.Drawing.Point(24, 111)
+        CategoriaLabel.Name = "CategoriaLabel"
+        CategoriaLabel.Size = New System.Drawing.Size(55, 13)
+        CategoriaLabel.TabIndex = 5
+        CategoriaLabel.Text = "Categoria:"
+        '
+        'TipoLabel
+        '
+        TipoLabel.AutoSize = True
+        TipoLabel.Location = New System.Drawing.Point(24, 138)
+        TipoLabel.Name = "TipoLabel"
+        TipoLabel.Size = New System.Drawing.Size(31, 13)
+        TipoLabel.TabIndex = 7
+        TipoLabel.Text = "Tipo:"
+        '
+        'PrecioLabel
+        '
+        PrecioLabel.AutoSize = True
+        PrecioLabel.Location = New System.Drawing.Point(24, 165)
+        PrecioLabel.Name = "PrecioLabel"
+        PrecioLabel.Size = New System.Drawing.Size(40, 13)
+        PrecioLabel.TabIndex = 9
+        PrecioLabel.Text = "Precio:"
+        '
+        'StockLabel
+        '
+        StockLabel.AutoSize = True
+        StockLabel.Location = New System.Drawing.Point(24, 191)
+        StockLabel.Name = "StockLabel"
+        StockLabel.Size = New System.Drawing.Size(38, 13)
+        StockLabel.TabIndex = 11
+        StockLabel.Text = "Stock:"
+        '
+        'Stock_MinimoLabel
+        '
+        Stock_MinimoLabel.AutoSize = True
+        Stock_MinimoLabel.Location = New System.Drawing.Point(24, 217)
+        Stock_MinimoLabel.Name = "Stock_MinimoLabel"
+        Stock_MinimoLabel.Size = New System.Drawing.Size(74, 13)
+        Stock_MinimoLabel.TabIndex = 13
+        Stock_MinimoLabel.Text = "Stock Minimo:"
+        '
+        'Id_VentasLabel
+        '
+        Id_VentasLabel.AutoSize = True
+        Id_VentasLabel.Location = New System.Drawing.Point(319, 63)
+        Id_VentasLabel.Name = "Id_VentasLabel"
+        Id_VentasLabel.Size = New System.Drawing.Size(55, 13)
+        Id_VentasLabel.TabIndex = 15
+        Id_VentasLabel.Text = "Id Ventas:"
+        '
+        'Id_ArticuloLabel1
+        '
+        Id_ArticuloLabel1.AutoSize = True
+        Id_ArticuloLabel1.Location = New System.Drawing.Point(319, 89)
+        Id_ArticuloLabel1.Name = "Id_ArticuloLabel1"
+        Id_ArticuloLabel1.Size = New System.Drawing.Size(57, 13)
+        Id_ArticuloLabel1.TabIndex = 17
+        Id_ArticuloLabel1.Text = "Id Articulo:"
+        '
+        'FechaLabel
+        '
+        FechaLabel.AutoSize = True
+        FechaLabel.Location = New System.Drawing.Point(319, 116)
+        FechaLabel.Name = "FechaLabel"
+        FechaLabel.Size = New System.Drawing.Size(40, 13)
+        FechaLabel.TabIndex = 19
+        FechaLabel.Text = "Fecha:"
+        '
+        'Id_clienteLabel
+        '
+        Id_clienteLabel.AutoSize = True
+        Id_clienteLabel.Location = New System.Drawing.Point(319, 141)
+        Id_clienteLabel.Name = "Id_clienteLabel"
+        Id_clienteLabel.Size = New System.Drawing.Size(53, 13)
+        Id_clienteLabel.TabIndex = 21
+        Id_clienteLabel.Text = "Id cliente:"
         '
         'MuebleriaDataSet
         '
@@ -103,14 +207,9 @@ Partial Class Vender
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.VentasTableAdapter = Me.VentasTableAdapter
         '
-        'Id_ArticuloLabel
+        'VentasTableAdapter
         '
-        Id_ArticuloLabel.AutoSize = True
-        Id_ArticuloLabel.Location = New System.Drawing.Point(24, 59)
-        Id_ArticuloLabel.Name = "Id_ArticuloLabel"
-        Id_ArticuloLabel.Size = New System.Drawing.Size(57, 13)
-        Id_ArticuloLabel.TabIndex = 1
-        Id_ArticuloLabel.Text = "Id Articulo:"
+        Me.VentasTableAdapter.ClearBeforeFill = True
         '
         'Id_ArticuloTextBox
         '
@@ -120,15 +219,6 @@ Partial Class Vender
         Me.Id_ArticuloTextBox.Size = New System.Drawing.Size(121, 20)
         Me.Id_ArticuloTextBox.TabIndex = 2
         '
-        'DescripcionLabel
-        '
-        DescripcionLabel.AutoSize = True
-        DescripcionLabel.Location = New System.Drawing.Point(24, 85)
-        DescripcionLabel.Name = "DescripcionLabel"
-        DescripcionLabel.Size = New System.Drawing.Size(66, 13)
-        DescripcionLabel.TabIndex = 3
-        DescripcionLabel.Text = "Descripcion:"
-        '
         'DescripcionTextBox
         '
         Me.DescripcionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
@@ -137,15 +227,6 @@ Partial Class Vender
         Me.DescripcionTextBox.Name = "DescripcionTextBox"
         Me.DescripcionTextBox.Size = New System.Drawing.Size(121, 20)
         Me.DescripcionTextBox.TabIndex = 4
-        '
-        'CategoriaLabel
-        '
-        CategoriaLabel.AutoSize = True
-        CategoriaLabel.Location = New System.Drawing.Point(24, 111)
-        CategoriaLabel.Name = "CategoriaLabel"
-        CategoriaLabel.Size = New System.Drawing.Size(55, 13)
-        CategoriaLabel.TabIndex = 5
-        CategoriaLabel.Text = "Categoria:"
         '
         'CategoriaComboBox
         '
@@ -157,15 +238,6 @@ Partial Class Vender
         Me.CategoriaComboBox.Size = New System.Drawing.Size(121, 21)
         Me.CategoriaComboBox.TabIndex = 6
         '
-        'TipoLabel
-        '
-        TipoLabel.AutoSize = True
-        TipoLabel.Location = New System.Drawing.Point(24, 138)
-        TipoLabel.Name = "TipoLabel"
-        TipoLabel.Size = New System.Drawing.Size(31, 13)
-        TipoLabel.TabIndex = 7
-        TipoLabel.Text = "Tipo:"
-        '
         'TipoComboBox
         '
         Me.TipoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Tipo", True))
@@ -176,15 +248,6 @@ Partial Class Vender
         Me.TipoComboBox.Size = New System.Drawing.Size(121, 21)
         Me.TipoComboBox.TabIndex = 8
         '
-        'PrecioLabel
-        '
-        PrecioLabel.AutoSize = True
-        PrecioLabel.Location = New System.Drawing.Point(24, 165)
-        PrecioLabel.Name = "PrecioLabel"
-        PrecioLabel.Size = New System.Drawing.Size(40, 13)
-        PrecioLabel.TabIndex = 9
-        PrecioLabel.Text = "Precio:"
-        '
         'PrecioTextBox
         '
         Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Precio", True))
@@ -194,15 +257,6 @@ Partial Class Vender
         Me.PrecioTextBox.Size = New System.Drawing.Size(121, 20)
         Me.PrecioTextBox.TabIndex = 10
         '
-        'StockLabel
-        '
-        StockLabel.AutoSize = True
-        StockLabel.Location = New System.Drawing.Point(24, 191)
-        StockLabel.Name = "StockLabel"
-        StockLabel.Size = New System.Drawing.Size(38, 13)
-        StockLabel.TabIndex = 11
-        StockLabel.Text = "Stock:"
-        '
         'StockTextBox
         '
         Me.StockTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
@@ -211,15 +265,6 @@ Partial Class Vender
         Me.StockTextBox.Name = "StockTextBox"
         Me.StockTextBox.Size = New System.Drawing.Size(121, 20)
         Me.StockTextBox.TabIndex = 12
-        '
-        'Stock_MinimoLabel
-        '
-        Stock_MinimoLabel.AutoSize = True
-        Stock_MinimoLabel.Location = New System.Drawing.Point(24, 217)
-        Stock_MinimoLabel.Name = "Stock_MinimoLabel"
-        Stock_MinimoLabel.Size = New System.Drawing.Size(74, 13)
-        Stock_MinimoLabel.TabIndex = 13
-        Stock_MinimoLabel.Text = "Stock Minimo:"
         '
         'Stock_MinimoTextBox
         '
@@ -253,19 +298,6 @@ Partial Class Vender
         Me.VentasBindingSource.DataMember = "Ventas"
         Me.VentasBindingSource.DataSource = Me.MuebleriaDataSet
         '
-        'VentasTableAdapter
-        '
-        Me.VentasTableAdapter.ClearBeforeFill = True
-        '
-        'Id_VentasLabel
-        '
-        Id_VentasLabel.AutoSize = True
-        Id_VentasLabel.Location = New System.Drawing.Point(319, 63)
-        Id_VentasLabel.Name = "Id_VentasLabel"
-        Id_VentasLabel.Size = New System.Drawing.Size(55, 13)
-        Id_VentasLabel.TabIndex = 15
-        Id_VentasLabel.Text = "Id Ventas:"
-        '
         'Id_VentasTextBox
         '
         Me.Id_VentasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Ventas", True))
@@ -275,15 +307,6 @@ Partial Class Vender
         Me.Id_VentasTextBox.Size = New System.Drawing.Size(200, 20)
         Me.Id_VentasTextBox.TabIndex = 16
         '
-        'Id_ArticuloLabel1
-        '
-        Id_ArticuloLabel1.AutoSize = True
-        Id_ArticuloLabel1.Location = New System.Drawing.Point(319, 89)
-        Id_ArticuloLabel1.Name = "Id_ArticuloLabel1"
-        Id_ArticuloLabel1.Size = New System.Drawing.Size(57, 13)
-        Id_ArticuloLabel1.TabIndex = 17
-        Id_ArticuloLabel1.Text = "Id Articulo:"
-        '
         'Id_ArticuloTextBox1
         '
         Me.Id_ArticuloTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Articulo", True))
@@ -292,15 +315,6 @@ Partial Class Vender
         Me.Id_ArticuloTextBox1.Size = New System.Drawing.Size(200, 20)
         Me.Id_ArticuloTextBox1.TabIndex = 18
         '
-        'FechaLabel
-        '
-        FechaLabel.AutoSize = True
-        FechaLabel.Location = New System.Drawing.Point(319, 116)
-        FechaLabel.Name = "FechaLabel"
-        FechaLabel.Size = New System.Drawing.Size(40, 13)
-        FechaLabel.TabIndex = 19
-        FechaLabel.Text = "Fecha:"
-        '
         'FechaDateTimePicker
         '
         Me.FechaDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VentasBindingSource, "Fecha", True))
@@ -308,15 +322,6 @@ Partial Class Vender
         Me.FechaDateTimePicker.Name = "FechaDateTimePicker"
         Me.FechaDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.FechaDateTimePicker.TabIndex = 20
-        '
-        'Id_clienteLabel
-        '
-        Id_clienteLabel.AutoSize = True
-        Id_clienteLabel.Location = New System.Drawing.Point(319, 141)
-        Id_clienteLabel.Name = "Id_clienteLabel"
-        Id_clienteLabel.Size = New System.Drawing.Size(53, 13)
-        Id_clienteLabel.TabIndex = 21
-        Id_clienteLabel.Text = "Id cliente:"
         '
         'Id_clienteTextBox
         '
@@ -328,10 +333,10 @@ Partial Class Vender
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Cantidad)
         Me.GroupBox2.Controls.Add(Me.Importe)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown1)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Location = New System.Drawing.Point(298, 13)
         Me.GroupBox2.Name = "GroupBox2"
@@ -340,21 +345,19 @@ Partial Class Vender
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de la Venta"
         '
-        'NumericUpDown1
+        'Cantidad
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(84, 149)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
-        Me.NumericUpDown1.TabIndex = 1
+        Me.Cantidad.Location = New System.Drawing.Point(84, 149)
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Size = New System.Drawing.Size(97, 20)
+        Me.Cantidad.TabIndex = 5
         '
-        'Label1
+        'Importe
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 152)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Cantidad:"
+        Me.Importe.Location = New System.Drawing.Point(84, 175)
+        Me.Importe.Name = "Importe"
+        Me.Importe.Size = New System.Drawing.Size(97, 20)
+        Me.Importe.TabIndex = 4
         '
         'Label2
         '
@@ -365,18 +368,58 @@ Partial Class Vender
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Importe:"
         '
-        'Importe
+        'Label1
         '
-        Me.Importe.Location = New System.Drawing.Point(84, 175)
-        Me.Importe.Name = "Importe"
-        Me.Importe.Size = New System.Drawing.Size(100, 20)
-        Me.Importe.TabIndex = 4
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(22, 152)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Cantidad:"
+        '
+        'VentasDataGridView
+        '
+        Me.VentasDataGridView.AutoGenerateColumns = False
+        Me.VentasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.VentasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.VentasDataGridView.DataSource = Me.VentasBindingSource
+        Me.VentasDataGridView.Location = New System.Drawing.Point(603, 47)
+        Me.VentasDataGridView.Name = "VentasDataGridView"
+        Me.VentasDataGridView.Size = New System.Drawing.Size(409, 220)
+        Me.VentasDataGridView.TabIndex = 24
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id_Ventas"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id_Ventas"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Id_Articulo"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Id_Articulo"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fecha"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Fecha"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Id_cliente"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Id_cliente"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
         'Vender
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(613, 318)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1024, 372)
+        Me.Controls.Add(Me.VentasDataGridView)
         Me.Controls.Add(Id_VentasLabel)
         Me.Controls.Add(Me.Id_VentasTextBox)
         Me.Controls.Add(Id_ArticuloLabel1)
@@ -408,7 +451,7 @@ Partial Class Vender
         CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VentasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -435,6 +478,11 @@ Partial Class Vender
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Importe As System.Windows.Forms.TextBox
+    Friend WithEvents Cantidad As System.Windows.Forms.TextBox
+    Friend WithEvents VentasDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
