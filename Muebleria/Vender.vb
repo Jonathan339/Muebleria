@@ -15,7 +15,7 @@
 
 
         '-------------------------------------------------------
-        Me.VentasBindingSource.AddNew() 'agregar preparo la bd
+
 
 
 
@@ -26,6 +26,7 @@
         'boton vender
 
         Dim fila, CodConsulta, aux, importe As Integer
+        Dim aux2 As Date
         CodConsulta = Val(Id_ArticuloTextBox.Text)
         fila = Me.ArticuloBindingSource.Find("Id_articulo", CodConsulta) 'me dice la posicion arranca de 0
         If fila = -1 Then
@@ -40,26 +41,25 @@
 
                     Me.ArticuloBindingSource.Current("Stock") = ArticuloBindingSource.Current("Stock") - Val(Cantidad.Text)
 
-
-                    Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet) 'grabo en disco
+                    Me.VentasBindingSource.AddNew()
                     '--------------------------------
 
                     Me.VentasBindingSource.Current("Id_Articulo") = Val(Id_ArticuloTextBox.Text)
-                    Me.VentasBindingSource.Current("Fecha") = FechaDateTimePicker.Text
 
+                    aux2 = DateTime.Now
+                    Me.VentasBindingSource.Current("Fecha") = aux2
                     Me.VentasBindingSource.Current("Id_cliente") = Val(Id_clienteTextBox.Text)
 
                     '--------------------------------
 
-                    Me.VentasBindingSource.AddNew() 'preparo la base para seguir agregado
+
                     Me.ArticuloBindingSource.EndEdit() 'cierro bd
 
-
+                    Me.VentasTableAdapter.Update(Me.MuebleriaDataSet.Ventas)
                     Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
 
 
 
-                    Me.VentasBindingSource.MoveLast()
 
                     Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo) 'Para actualizar en el otro formulario la grilla
 
