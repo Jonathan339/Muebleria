@@ -279,14 +279,14 @@ Partial Class Vender
         '
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(280, 302)
+        Me.GroupBox1.Size = New System.Drawing.Size(280, 255)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Articulo"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(24, 249)
+        Me.Button1.Location = New System.Drawing.Point(24, 220)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
@@ -304,7 +304,7 @@ Partial Class Vender
         Me.Id_VentasTextBox.Enabled = False
         Me.Id_VentasTextBox.Location = New System.Drawing.Point(382, 60)
         Me.Id_VentasTextBox.Name = "Id_VentasTextBox"
-        Me.Id_VentasTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.Id_VentasTextBox.Size = New System.Drawing.Size(123, 20)
         Me.Id_VentasTextBox.TabIndex = 16
         '
         'Id_ArticuloTextBox1
@@ -312,7 +312,7 @@ Partial Class Vender
         Me.Id_ArticuloTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Articulo", True))
         Me.Id_ArticuloTextBox1.Location = New System.Drawing.Point(382, 86)
         Me.Id_ArticuloTextBox1.Name = "Id_ArticuloTextBox1"
-        Me.Id_ArticuloTextBox1.Size = New System.Drawing.Size(200, 20)
+        Me.Id_ArticuloTextBox1.Size = New System.Drawing.Size(123, 20)
         Me.Id_ArticuloTextBox1.TabIndex = 18
         '
         'FechaDateTimePicker
@@ -320,7 +320,7 @@ Partial Class Vender
         Me.FechaDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VentasBindingSource, "Fecha", True))
         Me.FechaDateTimePicker.Location = New System.Drawing.Point(382, 112)
         Me.FechaDateTimePicker.Name = "FechaDateTimePicker"
-        Me.FechaDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaDateTimePicker.Size = New System.Drawing.Size(123, 20)
         Me.FechaDateTimePicker.TabIndex = 20
         '
         'Id_clienteTextBox
@@ -328,7 +328,7 @@ Partial Class Vender
         Me.Id_clienteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_cliente", True))
         Me.Id_clienteTextBox.Location = New System.Drawing.Point(382, 138)
         Me.Id_clienteTextBox.Name = "Id_clienteTextBox"
-        Me.Id_clienteTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.Id_clienteTextBox.Size = New System.Drawing.Size(123, 20)
         Me.Id_clienteTextBox.TabIndex = 22
         '
         'GroupBox2
@@ -340,7 +340,7 @@ Partial Class Vender
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Location = New System.Drawing.Point(298, 13)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(299, 301)
+        Me.GroupBox2.Size = New System.Drawing.Size(229, 254)
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de la Venta"
@@ -380,12 +380,13 @@ Partial Class Vender
         'VentasDataGridView
         '
         Me.VentasDataGridView.AutoGenerateColumns = False
+        Me.VentasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.VentasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VentasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.VentasDataGridView.DataSource = Me.VentasBindingSource
-        Me.VentasDataGridView.Location = New System.Drawing.Point(603, 47)
+        Me.VentasDataGridView.Location = New System.Drawing.Point(533, 43)
         Me.VentasDataGridView.Name = "VentasDataGridView"
-        Me.VentasDataGridView.Size = New System.Drawing.Size(409, 220)
+        Me.VentasDataGridView.Size = New System.Drawing.Size(350, 187)
         Me.VentasDataGridView.TabIndex = 24
         '
         'DataGridViewTextBoxColumn1
@@ -394,31 +395,35 @@ Partial Class Vender
         Me.DataGridViewTextBoxColumn1.HeaderText = "Id_Ventas"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 80
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "Id_Articulo"
         Me.DataGridViewTextBoxColumn2.HeaderText = "Id_Articulo"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 82
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fecha"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Fecha"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 62
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "Id_cliente"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Id_cliente"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 78
         '
         'Vender
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1024, 372)
+        Me.ClientSize = New System.Drawing.Size(892, 331)
         Me.Controls.Add(Me.VentasDataGridView)
         Me.Controls.Add(Id_VentasLabel)
         Me.Controls.Add(Me.Id_VentasTextBox)

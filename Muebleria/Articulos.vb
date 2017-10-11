@@ -15,11 +15,11 @@
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Articulo' Puede moverla o quitarla según sea necesario.
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
-        'Id_ArticuloTextBox.Enabled = False
+
         ArticuloDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader
 
 
-        Me.ArticuloBindingSource.AddNew()
+
 
         'combo para tipo
 
@@ -36,7 +36,7 @@
         CategoriaComboBox.Items.Add("Oficina")
 
 
-
+        Me.ArticuloBindingSource.AddNew()
 
 
 
@@ -83,8 +83,5 @@
 
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-
-
-    End Sub
+    
 End Class

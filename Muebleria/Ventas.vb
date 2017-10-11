@@ -7,62 +7,51 @@
 
     End Sub
 
-    Private Sub Ventas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Ventas' Puede moverla o quitarla según sea necesario.
         Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
-        '--------------------
 
+
+        Id_ArticuloTextBox.Text = ""
+        Id_VentasTextBox.Text = ""
+        Id_clienteTextBox.Text = ""
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Id_VentasTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Id_VentasTextBox.KeyPress
 
-        Dim vista As New DataView
-        If Id_ArticuloTextBox.Text <> "" Then
-            'Dim vista As New DataView
-            vista.Table = Me.MuebleriaDataSet.Articulo
-            vista.RowFilter = "Id_Articulo = " & Val(Id_ArticuloTextBox.Text)
-            Me.VentasDataGridView.DataSource = vista
-
-        ElseIf Id_clienteTextBox.Text <> "" Then 'busca por cliente
-            vista.Table = Me.MuebleriaDataSet.Ventas
-            vista.RowFilter = "Id_cliente = " & Val(Id_clienteTextBox.Text)
-            Me.VentasDataGridView.DataSource = vista
-
-        ElseIf Id_VentasTextBox.Text <> "" Then 'busca por Id_ventas
+        If Asc(Chr(13)) Then
+            Dim vista As New DataView
             vista.Table = Me.MuebleriaDataSet.Ventas
             vista.RowFilter = "Id_Ventas = " & Val(Id_VentasTextBox.Text)
             Me.VentasDataGridView.DataSource = vista
 
-        ElseIf FechaDateTimePicker.Text <> "" And DateTimePicker1.Text <> "" Then 'busca por fecha
-            Dim desde As String = FechaDateTimePicker.Text
-            Dim hasta As String = DateTimePicker1.Text
-            If VentasBindingSource.Current("Fecha") <> CInt(desde) And VentasBindingSource.Current("Fecha") <> CInt(hasta) Then
-                MsgBox("No se encontraron ventas en esas fechas.")
-            Else
-
-                vista.RowFilter = "Fecha = " & Val(desde) And Val(hasta)
-                Me.VentasDataGridView.DataSource = vista
-                If Me.FechaDateTimePicker.Text Then
-
-                End If
-            End If
         End If
-
-
 
 
     End Sub
 
-    Private Sub Id_ArticuloTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_ArticuloTextBox.TextChanged
 
+    Private Sub Id_ArticuloTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Id_ArticuloTextBox.KeyPress
 
-        Dim vista As New DataView
-        If Id_ArticuloTextBox.Text <> "" Then
-
+        If Asc(Chr(13)) Then
+            Dim vista As New DataView
             vista.Table = Me.MuebleriaDataSet.Articulo
             vista.RowFilter = "Id_Articulo = " & Val(Id_ArticuloTextBox.Text)
             Me.VentasDataGridView.DataSource = vista
+        End If
+
+
+    End Sub
+
+    Private Sub Id_clienteTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Id_clienteTextBox.KeyPress
+
+        If Asc(Chr(13)) Then
+            Dim vista As New DataView
+            vista.Table = Me.MuebleriaDataSet.Ventas
+            vista.RowFilter = "Id_cliente = " & Val(Id_clienteTextBox.Text)
+            Me.VentasDataGridView.DataSource = vista
+
         End If
 
     End Sub

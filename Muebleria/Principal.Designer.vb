@@ -79,7 +79,7 @@ Partial Class Principal
         '
         Me.AgregarModificarToolStripMenuItem.Name = "AgregarModificarToolStripMenuItem"
         Me.AgregarModificarToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
-        Me.AgregarModificarToolStripMenuItem.Text = "Agregar/Modificar"
+        Me.AgregarModificarToolStripMenuItem.Text = "Agregar articulo"
         '
         'ActualizaciónPreciosToolStripMenuItem
         '

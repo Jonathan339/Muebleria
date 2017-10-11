@@ -54,28 +54,26 @@
 
 
                     Me.ArticuloBindingSource.EndEdit() 'cierro bd
-
                     Me.VentasTableAdapter.Update(Me.MuebleriaDataSet.Ventas)
                     Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
 
 
 
 
+
                     Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo) 'Para actualizar en el otro formulario la grilla
-
+                    'actualizo la grilla del form principal
                     Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo)
-
-
-
+                    'calculo el importe para mostrarlo
                     importe = Val(Cantidad.Text) * Me.ArticuloBindingSource.Current("Precio")
                     MsgBox("La venta a sido realizada con exito el importe es: " & importe & "  Pesos")
+
+
                     Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo) 'Actualizo la grilla
 
 
 
-
-
-                    Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+                    Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas) 'lleno la grilla de ventas con los datos
 
                 Else
                     MsgBox("El stock es insuficiente, el stock actual es de: " & ArticuloBindingSource.Current("Cantidad") & " unidades")
@@ -98,14 +96,12 @@
 
     Private Sub Cantidad_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cantidad.TextChanged
 
-        'Dim imp_cantidad As Decimal = Me.ArticuloBindingSource.Current("Precio")
 
-        'imp_cantidad = Val(Importe.Text)
 
         If Cantidad.Text <> "" Then
 
             Importe.Text = Val(Cantidad.Text) * Val(Importe.Text)
-        
+
         End If
 
 

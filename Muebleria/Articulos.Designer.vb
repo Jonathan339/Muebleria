@@ -34,6 +34,8 @@ Partial Class Articulos
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArticuloTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.ArticuloTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
+        Me.CategoriaTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
+        Me.Tipo_MaterialTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.Tipo_MaterialTableAdapter
         Me.ArticuloDataGridView = New System.Windows.Forms.DataGridView
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -48,14 +50,11 @@ Partial Class Articulos
         Me.StockTextBox = New System.Windows.Forms.TextBox
         Me.Stock_MinimoTextBox = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Button2 = New System.Windows.Forms.Button
         Me.TipoComboBox = New System.Windows.Forms.ComboBox
         Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CategoriaTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
         Me.TipoMaterialBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Tipo_MaterialTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.Tipo_MaterialTableAdapter
         Id_ArticuloLabel = New System.Windows.Forms.Label
         DescripcionLabel = New System.Windows.Forms.Label
         CategoriaLabel = New System.Windows.Forms.Label
@@ -161,6 +160,14 @@ Partial Class Articulos
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.VentasTableAdapter = Nothing
         '
+        'CategoriaTableAdapter
+        '
+        Me.CategoriaTableAdapter.ClearBeforeFill = True
+        '
+        'Tipo_MaterialTableAdapter
+        '
+        Me.Tipo_MaterialTableAdapter.ClearBeforeFill = True
+        '
         'ArticuloDataGridView
         '
         Me.ArticuloDataGridView.AllowUserToOrderColumns = True
@@ -258,7 +265,6 @@ Partial Class Articulos
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.TipoComboBox)
         Me.GroupBox1.Controls.Add(Me.CategoriaComboBox)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -267,15 +273,6 @@ Partial Class Articulos
         Me.GroupBox1.Size = New System.Drawing.Size(197, 315)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(86, 250)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Eliminar"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'TipoComboBox
         '
@@ -309,18 +306,10 @@ Partial Class Articulos
         Me.CategoriaBindingSource.DataMember = "Categoria"
         Me.CategoriaBindingSource.DataSource = Me.MuebleriaDataSet
         '
-        'CategoriaTableAdapter
-        '
-        Me.CategoriaTableAdapter.ClearBeforeFill = True
-        '
         'TipoMaterialBindingSource
         '
         Me.TipoMaterialBindingSource.DataMember = "Tipo_Material"
         Me.TipoMaterialBindingSource.DataSource = Me.MuebleriaDataSet
-        '
-        'Tipo_MaterialTableAdapter
-        '
-        Me.Tipo_MaterialTableAdapter.ClearBeforeFill = True
         '
         'Articulos
         '
@@ -374,7 +363,6 @@ Partial Class Articulos
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TipoComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents CategoriaComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents CategoriaTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.CategoriaTableAdapter
     Friend WithEvents CategoriaBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Tipo_MaterialTableAdapter As WindowsApplication1.MuebleriaDataSetTableAdapters.Tipo_MaterialTableAdapter
