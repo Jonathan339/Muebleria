@@ -17,6 +17,11 @@
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
 
+        'oculto los label y textbox
+        'Label1.Visible = False
+        'Label2.Visible = False
+        'TextBox2.Visible = False
+        'TextBox3.Visible = False
 
         'Nombre de las tablas
         ComboBox1.Items.Add("Id_Articulo")
@@ -24,8 +29,10 @@
         ComboBox1.Items.Add("Categoria")
         ComboBox1.Items.Add("Tipo")
 
-        'configuracion del textbox para busqueda
 
+
+        
+        
         
 
 
@@ -126,6 +133,8 @@
                         vista.Table = Me.MuebleriaDataSet.Articulo
                         vista.RowFilter = "Id_Articulo = " & Val(Me.TextBox1.Text)
                         Me.ArticuloDataGridView.DataSource = vista
+                        
+                        
                     Else
                         MsgBox("El ID debe ser un numero sin letras.")
                     End If
@@ -137,6 +146,12 @@
                     vista.RowFilter = "Descripcion like '" & Me.TextBox1.Text & "%'"
                     Me.ArticuloDataGridView.DataSource = vista
 
+                    '------------------------------------
+
+                    
+
+                    '-------------------------------
+
                 ElseIf ComboBox1.SelectedItem = "Categoria" Then
 
                 ElseIf ComboBox1.SelectedItem = "Tipo" Then
@@ -144,6 +159,11 @@
                     vista.Table = Me.MuebleriaDataSet.Articulo
                     vista.RowFilter = "Tipo like '" & Me.TextBox1.Text & "%'"
                     Me.ArticuloDataGridView.DataSource = vista
+
+                    If ArticuloDataGridView.SelectionMode Then
+                        MsgBox("ad")
+                    End If
+
 
                 End If
 
@@ -163,13 +183,25 @@
         Ajuste_de_Stock.Show()
     End Sub
 
-    Private Sub ArticuloDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ArticuloDataGridView.CellContentClick
+    Private Sub ArticuloDataGridView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ArticuloDataGridView.Click
+
+
+        'Dim fila2 As Integer = ArticuloDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected)
+
+        'If fila2 = 1 Then
+        '    MsgBox("seleccione una fila")
+        '    ar()
+        'End If
+
 
     End Sub
+
 
     Private Sub ArticuloDataGridView_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles ArticuloDataGridView.DoubleClick
 
         Dim CodConsulta, fila, aux As Integer
+
+
 
         If ComboBox1.SelectedItem = "Id_Articulo" Then
             CodConsulta = TextBox1.Text
@@ -182,17 +214,29 @@
                 aux = MsgBox("¿Quiere realizar esta venta?", 32 + 1, "¿Vender?")
                 If aux = 1 Then
 
-                    Vender.Show()
+                    'Vender.Show()
 
-                    Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    Vender.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
-                    Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
-                    Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
-                    Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-                    Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
-                    Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
-                    Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+                    'Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    'Vender.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    'Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
+                    'Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
+                    'Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
+                    'Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+                    'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
+                    'Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
+                    'Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+                    Form2.Show()
+
+                    Form2.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    Form2.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    Form2.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
+                    Form2.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
+                    Form2.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
+                    Form2.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+                    Form2.Importe.Text = ArticuloBindingSource.Current("Precio")
+                    Form2.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
+                    Form2.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+
 
 
                 End If
@@ -209,6 +253,28 @@
 
     Private Sub BuscarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
 
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+        If ComboBox1.SelectedItem = "Precio" Then
+            Label1.Visible = True
+            Label2.Visible = True
+            TextBox2.Visible = True
+            TextBox3.Visible = True
+            'DataGridView1.Visible = True
+            TextBox1.Focus()
+            
+
+        End If
+
+    End Sub
+
+    
+    
+   
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
 
     End Sub
 End Class

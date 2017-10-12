@@ -23,6 +23,10 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
+
+
+
+
         'boton vender
 
         Dim fila, CodConsulta, aux, importe As Integer
@@ -42,6 +46,8 @@
                     Me.ArticuloBindingSource.Current("Stock") = ArticuloBindingSource.Current("Stock") - Val(Cantidad.Text)
 
                     Me.VentasBindingSource.AddNew()
+
+
                     '--------------------------------
 
                     Me.VentasBindingSource.Current("Id_Articulo") = Val(Id_ArticuloTextBox.Text)
@@ -55,7 +61,9 @@
 
                     Me.ArticuloBindingSource.EndEdit() 'cierro bd
                     Me.VentasTableAdapter.Update(Me.MuebleriaDataSet.Ventas)
-                    Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+
+                    'Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+
 
 
 
@@ -68,6 +76,11 @@
                     importe = Val(Cantidad.Text) * Me.ArticuloBindingSource.Current("Precio")
                     MsgBox("La venta a sido realizada con exito el importe es: " & importe & "  Pesos")
 
+
+
+                    'actualizo el stock del articulo
+                    StockTextBox.Text = Me.ArticuloBindingSource.Current("Stock")
+                    
 
                     Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo) 'Actualizo la grilla
 
@@ -108,4 +121,7 @@
     End Sub
 
    
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
+
+    End Sub
 End Class
