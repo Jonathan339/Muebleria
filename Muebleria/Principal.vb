@@ -225,17 +225,17 @@
                     'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
                     'Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
                     'Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
-                    Form2.Show()
+                    Vender.Show()
 
-                    Form2.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    Form2.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    Form2.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
-                    Form2.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
-                    Form2.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
-                    Form2.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-                    Form2.Importe.Text = ArticuloBindingSource.Current("Precio")
-                    Form2.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
-                    Form2.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+                    Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    Vender.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
+                    Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
+                    Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
+                    Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
+                    Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+                    Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
+                    Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
+                    Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
 
 
 
