@@ -13,7 +13,15 @@
 
         Me.ClienteBindingSource.AddNew()
 
+        '--------------------------------
 
+        LocalidadComboBox.Items.Add("Capital Federal")
+        LocalidadComboBox.Items.Add("Ramos Mejia")
+        LocalidadComboBox.Items.Add("Ciudadela")
+        LocalidadComboBox.Items.Add("San Justo")
+        LocalidadComboBox.Items.Add("Isidro Casanova")
+        LocalidadComboBox.Items.Add("Laferrere")
+        LocalidadComboBox.Items.Add("Catan")
 
 
 
