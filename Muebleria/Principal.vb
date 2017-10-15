@@ -10,6 +10,21 @@
         Articulo_Busqueda.Show()
     End Sub
 
+    Private Sub Principal_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+
+        'valida el cierre del programa
+
+        If (MessageBox.Show("¿Desea salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No) Then
+            e.Cancel = True
+        End If
+
+
+    End Sub
+
+    Private Sub Principal_InputLanguageChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.InputLanguageChangedEventArgs) Handles Me.InputLanguageChanged
+
+    End Sub
+
    
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
