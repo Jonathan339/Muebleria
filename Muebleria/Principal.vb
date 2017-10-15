@@ -258,16 +258,16 @@
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
 
-        If ComboBox1.SelectedItem = "Precio" Then
-            Label1.Visible = True
-            Label2.Visible = True
-            TextBox2.Visible = True
-            TextBox3.Visible = True
-            'DataGridView1.Visible = True
-            TextBox1.Focus()
-            
+        'If ComboBox1.SelectedItem = "Precio" Then
+        '    Label1.Visible = True
+        '    Label2.Visible = True
+        '    TextBox2.Visible = True
+        '    TextBox3.Visible = True
+        '    'DataGridView1.Visible = True
+        '    TextBox1.Focus()
 
-        End If
+
+        'End If
 
     End Sub
 

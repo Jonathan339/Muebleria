@@ -28,9 +28,11 @@
         Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
         Me.ClienteTableAdapter.Fill(Me.MuebleriaDataSet.Cliente)
         Me.ClienteBindingSource.MoveLast()
-        'Me.ClienteBindingSource.AddNew()
+        'Me.ClienteBindingSource.AddNew
 
         FechaIngresoDateTimePicker.Text = FechaIngresoDateTimePicker.Text
+
+        limpiar(Me)
 
     End Sub
 
