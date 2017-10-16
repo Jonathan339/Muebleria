@@ -100,6 +100,8 @@
                 vista.RowFilter = "Descripcion like '" & Me.TextBox1.Text & "%'"
                 Me.ArticuloDataGridView.DataSource = vista
 
+
+
             ElseIf ComboBox1.SelectedItem = "Categoria" Then
 
             ElseIf ComboBox1.SelectedItem = "Tipo" Then
@@ -161,12 +163,6 @@
                     vista.RowFilter = "Descripcion like '" & Me.TextBox1.Text & "%'"
                     Me.ArticuloDataGridView.DataSource = vista
 
-                    '------------------------------------
-
-                    
-
-                    '-------------------------------
-
                 ElseIf ComboBox1.SelectedItem = "Categoria" Then
 
                 ElseIf ComboBox1.SelectedItem = "Tipo" Then
@@ -200,14 +196,45 @@
 
     Private Sub ArticuloDataGridView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ArticuloDataGridView.Click
 
+        Dim fila, aux As Integer
 
-        'Dim fila2 As Integer = ArticuloDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
-        'If fila2 = 1 Then
-        '    MsgBox("seleccione una fila")
-        '    ar()
-        'End If
+        
 
+
+
+        If ComboBox1.SelectedItem <> "Id_Articulo" And TextBox1.Text <> "" Then
+            
+            fila = ArticuloDataGridView.CurrentCellAddress.Y 'saco la fila de 
+
+            If fila = -1 Then
+                MsgBox("No se encontro el Articulo")
+            Else
+                'se encontro
+                ArticuloBindingSource.Position = fila ' mover el cursor a la fila obtenida con esto muestro
+                aux = MsgBox("¿Quiere realizar esta venta?", 32 + 1, "¿Vender?")
+                If aux = 1 Then
+
+                    Vender.Show()
+                    Vender.Id_ArticuloTextBox.Text = ArticuloDataGridView.Item(0, fila).Value() 'asigno al texbox1 del formulario ventas el valor del art
+
+                    Vender.Id_ArticuloTextBox1.Text = ArticuloDataGridView.Item(0, fila).Value() '
+
+
+                    Vender.DescripcionTextBox.Text = ArticuloDataGridView.Item(1, fila).Value()
+                    Vender.CategoriaComboBox.Text = ArticuloDataGridView.Item(2, fila).Value()
+                    Vender.TipoComboBox.Text = ArticuloDataGridView.Item(3, fila).Value()
+                    Vender.PrecioTextBox.Text = ArticuloDataGridView.Item(4, fila).Value()
+                    Vender.StockTextBox.Text = ArticuloDataGridView.Item(5, fila).Value()
+                    Vender.Stock_MinimoTextBox.Text = ArticuloDataGridView.Item(6, fila).Value()
+
+                    Vender.Importe.Text = ArticuloDataGridView.Item(4, fila).Value()
+
+
+                End If
+            End If
+
+        End If
 
     End Sub
 
@@ -229,17 +256,6 @@
                 aux = MsgBox("¿Quiere realizar esta venta?", 32 + 1, "¿Vender?")
                 If aux = 1 Then
 
-                    'Vender.Show()
-
-                    'Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    'Vender.Id_ArticuloTextBox1.Text = ArticuloBindingSource.Current("Id_Articulo")
-                    'Vender.DescripcionTextBox.Text = ArticuloBindingSource.Current("Descripcion")
-                    'Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
-                    'Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
-                    'Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-                    'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
-                    'Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
-                    'Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
                     Vender.Show()
 
                     Vender.Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo")
@@ -273,13 +289,8 @@
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
 
-        'If ComboBox1.SelectedItem = "Precio" Then
-        '    Label1.Visible = True
-        '    Label2.Visible = True
-        '    TextBox2.Visible = True
-        '    TextBox3.Visible = True
-        '    'DataGridView1.Visible = True
-        '    TextBox1.Focus()
+        'If ComboBox1.SelectedItem <> "Id_Articulo" Then
+        
 
 
         'End If
@@ -290,6 +301,15 @@
     
    
     Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+
+        If TextBox1.Text = "" Then
+            ComboBox1.Text = ""
+            Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
+        End If
+
+    End Sub
+
+    Private Sub ArticuloDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ArticuloDataGridView.CellContentClick
 
     End Sub
 End Class

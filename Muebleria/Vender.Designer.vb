@@ -308,12 +308,12 @@ Partial Class Vender
         Me.GroupBox2.Controls.Add(FechaLabel)
         Me.GroupBox2.Controls.Add(Me.FechaDateTimePicker)
         Me.GroupBox2.Controls.Add(Id_clienteLabel)
-        Me.GroupBox2.Location = New System.Drawing.Point(257, 17)
+        Me.GroupBox2.Location = New System.Drawing.Point(257, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(219, 291)
+        Me.GroupBox2.Size = New System.Drawing.Size(219, 296)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Datos de la venta"
         '
         'Id_cliente
         '

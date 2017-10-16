@@ -47,4 +47,30 @@
     Private Sub Id_ClienteTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_ClienteTextBox.TextChanged
 
     End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+
+        Dim fila, cod_consulta, aux As Integer
+        Id_ClienteTextBox.Text = InputBox("Id_Cliente")
+        fila = Me.ClienteBindingSource.Find("Id_Cliente", cod_consulta)
+
+        If fila = -1 Then
+            MsgBox("El registro no se encontró")
+        Else
+            ClienteBindingSource.Position = fila
+            aux = MsgBox("Quieres eliminar" & cod_consulta, 32 + 1, "eliminar")
+            If aux = 1 Then
+                Me.ClienteBindingSource.RemoveCurrent()
+                Me.ClienteBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet)
+
+
+            End If
+        End If
+
+
+
+
+
+    End Sub
 End Class

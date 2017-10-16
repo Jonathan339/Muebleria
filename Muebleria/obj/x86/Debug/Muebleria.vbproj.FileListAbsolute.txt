@@ -12,7 +12,6 @@ C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Deb
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Ventas.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Principal.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Resources.resources
-C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Proveedor.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Stock.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Vendedores.resources
 C:\Users\x\Documents\Visual Studio 2008\Projects\Muebleria\Muebleria\obj\x86\Debug\WindowsApplication1.Vender.resources

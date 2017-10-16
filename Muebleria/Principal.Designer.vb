@@ -52,6 +52,7 @@ Partial Class Principal
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
+        Me.EliminarClinteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,7 +96,7 @@ Partial Class Principal
         '
         'ClientesToolStripMenuItem
         '
-        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem1, Me.BuscarToolStripMenuItem})
+        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem1, Me.BuscarToolStripMenuItem, Me.EliminarClinteToolStripMenuItem})
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
         Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
@@ -265,6 +266,12 @@ Partial Class Principal
         Me.Button1.Text = "Buscar por"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'EliminarClinteToolStripMenuItem
+        '
+        Me.EliminarClinteToolStripMenuItem.Name = "EliminarClinteToolStripMenuItem"
+        Me.EliminarClinteToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.EliminarClinteToolStripMenuItem.Text = "Eliminar clinte"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -316,5 +323,6 @@ Partial Class Principal
     Friend WithEvents MostrarVentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EmpleadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EliminarClinteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

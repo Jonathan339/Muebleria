@@ -20,6 +20,9 @@
 
 
 
+
+
+
     End Sub
 
     Private Sub Cantidad_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cantidad.TextChanged
@@ -102,6 +105,17 @@
 
 
 
+
+
+    End Sub
+
+    Private Sub Id_cliente_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Id_cliente.TextChanged
+
+
+
+        If Not IsNumeric(Id_cliente.Text) Then
+            MsgBox("solo ingrese numero de cliente sin letras o caracteres.")
+        End If
 
 
     End Sub
