@@ -8,16 +8,20 @@
     End Sub
 
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.CompraArt' Puede moverla o quitarla según sea necesario.
+        Me.CompraArtTableAdapter.Fill(Me.MuebleriaDataSet.CompraArt)
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Ventas' Puede moverla o quitarla según sea necesario.
         Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas)
+
         'TODO: esta línea de código carga datos en la tabla 'MuebleriaDataSet.Articulo' Puede moverla o quitarla según sea necesario.
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
         '--------------------------------
 
+        If Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo") Then
 
-
-
+            Importe.Text = Me.ArticuloBindingSource.Current("Precio")
+        End If
 
 
 
@@ -56,17 +60,19 @@
                 If ArticuloBindingSource.Current("Stock") >= Val(Cantidad.Text) Then 'si true puedo vender
                     'guardo la transaccion en la tabla venta-----------------------------------------------
 
-                    Me.VentasBindingSource.AddNew()
-                    Me.VentasBindingSource.Current("Id_articulo") = ArticuloBindingSource.Current("Id_articulo")
+                    Me.CompraArtBindingSource.AddNew()
+                    Me.CompraArtBindingSource.Current("Id_articulo") = ArticuloBindingSource.Current("Id_articulo")
 
                     'Me.VentasBindingSource.Current("Cantidad") = Val(Cantidad.Text)
 
                     aux2 = DateTime.Now
-                    Me.VentasBindingSource.Current("Fecha") = aux2
+                    Me.CompraArtBindingSource.Current("Fecha") = aux2
                     'Me.VenBindingSource.Current("Precio") = Val(Cantidad.Text) * Me.ArticuloBindingSource.Current("Precio")
-                    Me.VentasBindingSource.Current("Id_cliente") = Val(Id_cliente.Text)
-                    Me.VentasBindingSource.EndEdit()
-                    Me.VentasTableAdapter.Update(Me.MuebleriaDataSet.Ventas)
+                    Me.CompraArtBindingSource.Current("Id_cliente") = Val(Id_cliente.Text)
+                    Me.CompraArtBindingSource.Current("Cantidad") = Val(Cantidad.Text)
+                    Me.CompraArtBindingSource.Current("importe") = importe.ToString
+                    Me.CompraArtBindingSource.EndEdit()
+                    Me.CompraArtTableAdapter.Update(Me.MuebleriaDataSet.CompraArt)
 
                     '------------------------------------------
 
@@ -88,7 +94,7 @@
                     Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet) 'grabo en disco las dos tablas
                     Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo) 'Para actualizar en el otro formulario la grilla
                     Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo) 'Actualizo la grilla stock
-                    Me.VentasTableAdapter.Fill(Me.MuebleriaDataSet.Ventas) 'actualizo la grilla ventas
+                    Me.CompraArtTableAdapter.Fill(Me.MuebleriaDataSet.CompraArt) 'actualizo la grilla ventas
 
 
                 Else

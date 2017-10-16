@@ -32,11 +32,7 @@
         Me.ArticuloTableAdapter.Fill(Me.MuebleriaDataSet.Articulo)
 
 
-        'oculto los label y textbox
-        'Label1.Visible = False
-        'Label2.Visible = False
-        'TextBox2.Visible = False
-        'TextBox3.Visible = False
+
 
         'Nombre de las tablas
         ComboBox1.Items.Add("Id_Articulo")
@@ -199,10 +195,6 @@
         Dim fila, aux As Integer
 
 
-        
-
-
-
         If ComboBox1.SelectedItem <> "Id_Articulo" And TextBox1.Text <> "" Then
             
             fila = ArticuloDataGridView.CurrentCellAddress.Y 'saco la fila de 
@@ -227,8 +219,8 @@
                     Vender.PrecioTextBox.Text = ArticuloDataGridView.Item(4, fila).Value()
                     Vender.StockTextBox.Text = ArticuloDataGridView.Item(5, fila).Value()
                     Vender.Stock_MinimoTextBox.Text = ArticuloDataGridView.Item(6, fila).Value()
-
-                    Vender.Importe.Text = ArticuloDataGridView.Item(4, fila).Value()
+                    'mando el precio a el textbox importe
+                    'Vender.Importe.Text = ArticuloDataGridView.Item(4, fila).Value()
 
 
                 End If
@@ -264,9 +256,12 @@
                     Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
                     Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
                     Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
-                    Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
+                    
                     Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
                     Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
+
+                    'mando el precio a el textbox importe
+                    'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
 
 
 

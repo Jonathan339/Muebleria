@@ -38,6 +38,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSet.compraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSet.CompraArtDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:WindowsApplication1.MuebleriaDataSet.ArticuloRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -70,6 +78,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSet.compraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSet.CompraArtRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:WindowsApplication1.MuebleriaDataSet.ArticuloRowChangeEvent">
 	<summary>
 Row event argument class
@@ -99,6 +115,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:WindowsApplication1.MuebleriaDataSet.VentasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSet.compraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSet.CompraArtRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -135,6 +159,14 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:WindowsApplication1.MuebleriaDataSetTableAdapters.VentasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSetTableAdapters.compraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WindowsApplication1.MuebleriaDataSetTableAdapters.CompraArtTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
