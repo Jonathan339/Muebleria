@@ -113,9 +113,9 @@
 
 
 
-        If Not IsNumeric(Id_cliente.Text) Then
-            MsgBox("solo ingrese numero de cliente sin letras o caracteres.")
-        End If
+        'If Not IsNumeric(Id_cliente.Text) Then
+        '    MsgBox("solo ingrese numero de cliente sin letras o caracteres")
+        'End If
 
 
     End Sub
