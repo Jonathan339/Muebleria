@@ -167,9 +167,6 @@
                     vista.RowFilter = "Tipo like '" & Me.TextBox1.Text & "%'"
                     Me.ArticuloDataGridView.DataSource = vista
 
-                    If ArticuloDataGridView.SelectionMode Then
-                        MsgBox("ad")
-                    End If
 
 
                 End If

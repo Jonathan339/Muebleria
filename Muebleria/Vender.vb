@@ -18,10 +18,8 @@
 
         '--------------------------------
 
-        If Id_ArticuloTextBox.Text = ArticuloBindingSource.Current("Id_Articulo") Then
 
-            Importe.Text = Me.ArticuloBindingSource.Current("Precio")
-        End If
+        Importe.Text = Val(PrecioTextBox.Text)
 
 
 
