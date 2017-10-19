@@ -84,4 +84,58 @@
     End Sub
 
     
+    Private Sub DescripcionTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles DescripcionTextBox.KeyPress
+        'VALIDACION LETRAS
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten letras")
+        End If
+
+    End Sub
+
+    Private Sub PrecioTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles PrecioTextBox.KeyPress
+
+        'VALIDACION NUMEROS
+        If Char.IsNumber(e.KeyChar) Or e.KeyChar = "." Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten valores numéricos")
+        End If
+
+    End Sub
+
+    Private Sub Stock_MinimoTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Stock_MinimoTextBox.KeyPress
+
+        'VALIDACION NUMEROS
+        If Char.IsNumber(e.KeyChar) Or e.KeyChar = "." Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten valores numéricos", "Atención")
+        End If
+
+    End Sub
+
+    Private Sub StockTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles StockTextBox.KeyPress
+
+        'VALIDACION NUMEROS
+        If Char.IsNumber(e.KeyChar) Or e.KeyChar = "." Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten valores numéricos", "Atención")
+        End If
+
+    End Sub
 End Class

@@ -23,7 +23,6 @@ Partial Class Vendedores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Vendedores))
         Dim Id_EmpleadoLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim ApellidoLabel As System.Windows.Forms.Label
@@ -33,22 +32,23 @@ Partial Class Vendedores
         Dim Id_SucursalLabel As System.Windows.Forms.Label
         Dim FechaIngresoLabel As System.Windows.Forms.Label
         Dim FechaEgresoLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Vendedores))
         Me.MuebleriaDataSet = New WindowsApplication1.MuebleriaDataSet
         Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmpleadoTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.EmpleadoTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
         Me.EmpleadoBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton
         Me.EmpleadoBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton
         Me.EmpleadoDataGridView = New System.Windows.Forms.DataGridView
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -61,6 +61,7 @@ Partial Class Vendedores
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.Button1 = New System.Windows.Forms.Button
         Me.Id_EmpleadoTextBox = New System.Windows.Forms.TextBox
         Me.NombreTextBox = New System.Windows.Forms.TextBox
         Me.ApellidoTextBox = New System.Windows.Forms.TextBox
@@ -70,7 +71,6 @@ Partial Class Vendedores
         Me.Id_SucursalTextBox = New System.Windows.Forms.TextBox
         Me.FechaIngresoDateTimePicker = New System.Windows.Forms.DateTimePicker
         Me.FechaEgresoDateTimePicker = New System.Windows.Forms.DateTimePicker
-        Me.Button1 = New System.Windows.Forms.Button
         Id_EmpleadoLabel = New System.Windows.Forms.Label
         NombreLabel = New System.Windows.Forms.Label
         ApellidoLabel = New System.Windows.Forms.Label
@@ -87,6 +87,87 @@ Partial Class Vendedores
         CType(Me.EmpleadoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Id_EmpleadoLabel
+        '
+        Id_EmpleadoLabel.AutoSize = True
+        Id_EmpleadoLabel.Location = New System.Drawing.Point(15, 41)
+        Id_EmpleadoLabel.Name = "Id_EmpleadoLabel"
+        Id_EmpleadoLabel.Size = New System.Drawing.Size(69, 13)
+        Id_EmpleadoLabel.TabIndex = 0
+        Id_EmpleadoLabel.Text = "Id Empleado:"
+        '
+        'NombreLabel
+        '
+        NombreLabel.AutoSize = True
+        NombreLabel.Location = New System.Drawing.Point(15, 67)
+        NombreLabel.Name = "NombreLabel"
+        NombreLabel.Size = New System.Drawing.Size(47, 13)
+        NombreLabel.TabIndex = 2
+        NombreLabel.Text = "Nombre:"
+        '
+        'ApellidoLabel
+        '
+        ApellidoLabel.AutoSize = True
+        ApellidoLabel.Location = New System.Drawing.Point(15, 93)
+        ApellidoLabel.Name = "ApellidoLabel"
+        ApellidoLabel.Size = New System.Drawing.Size(47, 13)
+        ApellidoLabel.TabIndex = 4
+        ApellidoLabel.Text = "Apellido:"
+        '
+        'FechaNacimientoLabel
+        '
+        FechaNacimientoLabel.AutoSize = True
+        FechaNacimientoLabel.Location = New System.Drawing.Point(15, 120)
+        FechaNacimientoLabel.Name = "FechaNacimientoLabel"
+        FechaNacimientoLabel.Size = New System.Drawing.Size(96, 13)
+        FechaNacimientoLabel.TabIndex = 6
+        FechaNacimientoLabel.Text = "Fecha Nacimiento:"
+        '
+        'SectorLabel
+        '
+        SectorLabel.AutoSize = True
+        SectorLabel.Location = New System.Drawing.Point(15, 145)
+        SectorLabel.Name = "SectorLabel"
+        SectorLabel.Size = New System.Drawing.Size(41, 13)
+        SectorLabel.TabIndex = 8
+        SectorLabel.Text = "Sector:"
+        '
+        'PuestoLabel
+        '
+        PuestoLabel.AutoSize = True
+        PuestoLabel.Location = New System.Drawing.Point(15, 171)
+        PuestoLabel.Name = "PuestoLabel"
+        PuestoLabel.Size = New System.Drawing.Size(43, 13)
+        PuestoLabel.TabIndex = 10
+        PuestoLabel.Text = "Puesto:"
+        '
+        'Id_SucursalLabel
+        '
+        Id_SucursalLabel.AutoSize = True
+        Id_SucursalLabel.Location = New System.Drawing.Point(15, 197)
+        Id_SucursalLabel.Name = "Id_SucursalLabel"
+        Id_SucursalLabel.Size = New System.Drawing.Size(63, 13)
+        Id_SucursalLabel.TabIndex = 12
+        Id_SucursalLabel.Text = "Id Sucursal:"
+        '
+        'FechaIngresoLabel
+        '
+        FechaIngresoLabel.AutoSize = True
+        FechaIngresoLabel.Location = New System.Drawing.Point(15, 224)
+        FechaIngresoLabel.Name = "FechaIngresoLabel"
+        FechaIngresoLabel.Size = New System.Drawing.Size(78, 13)
+        FechaIngresoLabel.TabIndex = 14
+        FechaIngresoLabel.Text = "Fecha Ingreso:"
+        '
+        'FechaEgresoLabel
+        '
+        FechaEgresoLabel.AutoSize = True
+        FechaEgresoLabel.Location = New System.Drawing.Point(15, 250)
+        FechaEgresoLabel.Name = "FechaEgresoLabel"
+        FechaEgresoLabel.Size = New System.Drawing.Size(76, 13)
+        FechaEgresoLabel.TabIndex = 16
+        FechaEgresoLabel.Text = "Fecha Egreso:"
         '
         'MuebleriaDataSet
         '
@@ -108,6 +189,8 @@ Partial Class Vendedores
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CategoriaTableAdapter = Nothing
         Me.TableAdapterManager.ClienteTableAdapter = Nothing
+        Me.TableAdapterManager.CompraArtTableAdapter = Nothing
+        Me.TableAdapterManager.compraTableAdapter = Nothing
         Me.TableAdapterManager.EmpleadoTableAdapter = Me.EmpleadoTableAdapter
         Me.TableAdapterManager.LocalidadTableAdapter = Nothing
         Me.TableAdapterManager.SucursalTableAdapter = Nothing
@@ -132,6 +215,31 @@ Partial Class Vendedores
         Me.EmpleadoBindingNavigator.Size = New System.Drawing.Size(765, 25)
         Me.EmpleadoBindingNavigator.TabIndex = 0
         Me.EmpleadoBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -165,17 +273,10 @@ Partial Class Vendedores
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 15)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -183,7 +284,7 @@ Partial Class Vendedores
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
         '
         'BindingNavigatorMoveLastItem
@@ -192,38 +293,20 @@ Partial Class Vendedores
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "Mover último"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'EmpleadoBindingNavigatorSaveItem
         '
         Me.EmpleadoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.EmpleadoBindingNavigatorSaveItem.Image = CType(resources.GetObject("EmpleadoBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.EmpleadoBindingNavigatorSaveItem.Name = "EmpleadoBindingNavigatorSaveItem"
-        Me.EmpleadoBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.EmpleadoBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.EmpleadoBindingNavigatorSaveItem.Text = "Guardar datos"
         '
         'EmpleadoDataGridView
@@ -322,14 +405,14 @@ Partial Class Vendedores
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
-        'Id_EmpleadoLabel
+        'Button1
         '
-        Id_EmpleadoLabel.AutoSize = True
-        Id_EmpleadoLabel.Location = New System.Drawing.Point(15, 41)
-        Id_EmpleadoLabel.Name = "Id_EmpleadoLabel"
-        Id_EmpleadoLabel.Size = New System.Drawing.Size(69, 13)
-        Id_EmpleadoLabel.TabIndex = 0
-        Id_EmpleadoLabel.Text = "Id Empleado:"
+        Me.Button1.Location = New System.Drawing.Point(117, 315)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Guardar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Id_EmpleadoTextBox
         '
@@ -339,15 +422,6 @@ Partial Class Vendedores
         Me.Id_EmpleadoTextBox.Size = New System.Drawing.Size(120, 20)
         Me.Id_EmpleadoTextBox.TabIndex = 1
         '
-        'NombreLabel
-        '
-        NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(15, 67)
-        NombreLabel.Name = "NombreLabel"
-        NombreLabel.Size = New System.Drawing.Size(47, 13)
-        NombreLabel.TabIndex = 2
-        NombreLabel.Text = "Nombre:"
-        '
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadoBindingSource, "Nombre", True))
@@ -355,15 +429,6 @@ Partial Class Vendedores
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(120, 20)
         Me.NombreTextBox.TabIndex = 3
-        '
-        'ApellidoLabel
-        '
-        ApellidoLabel.AutoSize = True
-        ApellidoLabel.Location = New System.Drawing.Point(15, 93)
-        ApellidoLabel.Name = "ApellidoLabel"
-        ApellidoLabel.Size = New System.Drawing.Size(47, 13)
-        ApellidoLabel.TabIndex = 4
-        ApellidoLabel.Text = "Apellido:"
         '
         'ApellidoTextBox
         '
@@ -373,15 +438,6 @@ Partial Class Vendedores
         Me.ApellidoTextBox.Size = New System.Drawing.Size(120, 20)
         Me.ApellidoTextBox.TabIndex = 5
         '
-        'FechaNacimientoLabel
-        '
-        FechaNacimientoLabel.AutoSize = True
-        FechaNacimientoLabel.Location = New System.Drawing.Point(15, 120)
-        FechaNacimientoLabel.Name = "FechaNacimientoLabel"
-        FechaNacimientoLabel.Size = New System.Drawing.Size(96, 13)
-        FechaNacimientoLabel.TabIndex = 6
-        FechaNacimientoLabel.Text = "Fecha Nacimiento:"
-        '
         'FechaNacimientoDateTimePicker
         '
         Me.FechaNacimientoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmpleadoBindingSource, "FechaNacimiento", True))
@@ -389,15 +445,6 @@ Partial Class Vendedores
         Me.FechaNacimientoDateTimePicker.Name = "FechaNacimientoDateTimePicker"
         Me.FechaNacimientoDateTimePicker.Size = New System.Drawing.Size(120, 20)
         Me.FechaNacimientoDateTimePicker.TabIndex = 7
-        '
-        'SectorLabel
-        '
-        SectorLabel.AutoSize = True
-        SectorLabel.Location = New System.Drawing.Point(15, 145)
-        SectorLabel.Name = "SectorLabel"
-        SectorLabel.Size = New System.Drawing.Size(41, 13)
-        SectorLabel.TabIndex = 8
-        SectorLabel.Text = "Sector:"
         '
         'SectorTextBox
         '
@@ -407,15 +454,6 @@ Partial Class Vendedores
         Me.SectorTextBox.Size = New System.Drawing.Size(120, 20)
         Me.SectorTextBox.TabIndex = 9
         '
-        'PuestoLabel
-        '
-        PuestoLabel.AutoSize = True
-        PuestoLabel.Location = New System.Drawing.Point(15, 171)
-        PuestoLabel.Name = "PuestoLabel"
-        PuestoLabel.Size = New System.Drawing.Size(43, 13)
-        PuestoLabel.TabIndex = 10
-        PuestoLabel.Text = "Puesto:"
-        '
         'PuestoTextBox
         '
         Me.PuestoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadoBindingSource, "Puesto", True))
@@ -423,15 +461,6 @@ Partial Class Vendedores
         Me.PuestoTextBox.Name = "PuestoTextBox"
         Me.PuestoTextBox.Size = New System.Drawing.Size(120, 20)
         Me.PuestoTextBox.TabIndex = 11
-        '
-        'Id_SucursalLabel
-        '
-        Id_SucursalLabel.AutoSize = True
-        Id_SucursalLabel.Location = New System.Drawing.Point(15, 197)
-        Id_SucursalLabel.Name = "Id_SucursalLabel"
-        Id_SucursalLabel.Size = New System.Drawing.Size(63, 13)
-        Id_SucursalLabel.TabIndex = 12
-        Id_SucursalLabel.Text = "Id Sucursal:"
         '
         'Id_SucursalTextBox
         '
@@ -441,15 +470,6 @@ Partial Class Vendedores
         Me.Id_SucursalTextBox.Size = New System.Drawing.Size(120, 20)
         Me.Id_SucursalTextBox.TabIndex = 13
         '
-        'FechaIngresoLabel
-        '
-        FechaIngresoLabel.AutoSize = True
-        FechaIngresoLabel.Location = New System.Drawing.Point(15, 224)
-        FechaIngresoLabel.Name = "FechaIngresoLabel"
-        FechaIngresoLabel.Size = New System.Drawing.Size(78, 13)
-        FechaIngresoLabel.TabIndex = 14
-        FechaIngresoLabel.Text = "Fecha Ingreso:"
-        '
         'FechaIngresoDateTimePicker
         '
         Me.FechaIngresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmpleadoBindingSource, "FechaIngreso", True))
@@ -458,15 +478,6 @@ Partial Class Vendedores
         Me.FechaIngresoDateTimePicker.Size = New System.Drawing.Size(120, 20)
         Me.FechaIngresoDateTimePicker.TabIndex = 15
         '
-        'FechaEgresoLabel
-        '
-        FechaEgresoLabel.AutoSize = True
-        FechaEgresoLabel.Location = New System.Drawing.Point(15, 250)
-        FechaEgresoLabel.Name = "FechaEgresoLabel"
-        FechaEgresoLabel.Size = New System.Drawing.Size(76, 13)
-        FechaEgresoLabel.TabIndex = 16
-        FechaEgresoLabel.Text = "Fecha Egreso:"
-        '
         'FechaEgresoDateTimePicker
         '
         Me.FechaEgresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmpleadoBindingSource, "FechaEgreso", True))
@@ -474,15 +485,6 @@ Partial Class Vendedores
         Me.FechaEgresoDateTimePicker.Name = "FechaEgresoDateTimePicker"
         Me.FechaEgresoDateTimePicker.Size = New System.Drawing.Size(120, 20)
         Me.FechaEgresoDateTimePicker.TabIndex = 17
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(117, 272)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Vendedores
         '

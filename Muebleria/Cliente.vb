@@ -73,4 +73,50 @@
 
 
     End Sub
+
+    Private Sub NombreTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreTextBox.KeyPress
+
+        'VALIDACION LETRAS
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten letras")
+        End If
+
+
+    End Sub
+
+    Private Sub ApellidoTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ApellidoTextBox.KeyPress
+
+        'VALIDACION LETRAS
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten letras")
+        End If
+
+
+    End Sub
+
+    
+    Private Sub TelefonoTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TelefonoTextBox.KeyPress
+
+
+        'VALIDACION NUMEROS
+        If Char.IsNumber(e.KeyChar) Or e.KeyChar = "." Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("Solo se permiten valores numéricos")
+        End If
+
+    End Sub
 End Class

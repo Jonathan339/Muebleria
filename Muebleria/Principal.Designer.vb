@@ -31,6 +31,7 @@ Partial Class Principal
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarModificarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EliminarClinteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MostrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VendedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -52,7 +53,6 @@ Partial Class Principal
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
-        Me.EliminarClinteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,6 +113,12 @@ Partial Class Principal
         Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar cliente"
         '
+        'EliminarClinteToolStripMenuItem
+        '
+        Me.EliminarClinteToolStripMenuItem.Name = "EliminarClinteToolStripMenuItem"
+        Me.EliminarClinteToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.EliminarClinteToolStripMenuItem.Text = "Eliminar clinte"
+        '
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MostrarVentasToolStripMenuItem})
@@ -165,6 +171,8 @@ Partial Class Principal
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.CategoriaTableAdapter = Nothing
         Me.TableAdapterManager.ClienteTableAdapter = Nothing
+        Me.TableAdapterManager.CompraArtTableAdapter = Nothing
+        Me.TableAdapterManager.compraTableAdapter = Nothing
         Me.TableAdapterManager.EmpleadoTableAdapter = Nothing
         Me.TableAdapterManager.LocalidadTableAdapter = Nothing
         Me.TableAdapterManager.SucursalTableAdapter = Nothing
@@ -266,12 +274,6 @@ Partial Class Principal
         Me.Button1.Text = "Buscar por"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'EliminarClinteToolStripMenuItem
-        '
-        Me.EliminarClinteToolStripMenuItem.Name = "EliminarClinteToolStripMenuItem"
-        Me.EliminarClinteToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.EliminarClinteToolStripMenuItem.Text = "Eliminar clinte"
-        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -282,7 +284,7 @@ Partial Class Principal
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Principal"
-        Me.Text = "M"
+        Me.Text = "Muebleria"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
