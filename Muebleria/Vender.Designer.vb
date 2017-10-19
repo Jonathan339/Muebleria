@@ -36,6 +36,8 @@ Partial Class Vender
         Dim Id_clienteLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Id_ArticuloTextBox = New System.Windows.Forms.TextBox
+        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MuebleriaDataSet = New WindowsApplication1.MuebleriaDataSet
         Me.DescripcionTextBox = New System.Windows.Forms.TextBox
         Me.CategoriaComboBox = New System.Windows.Forms.ComboBox
         Me.TipoComboBox = New System.Windows.Forms.ComboBox
@@ -50,16 +52,14 @@ Partial Class Vender
         Me.Importe = New System.Windows.Forms.TextBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.Id_VentasTextBox = New System.Windows.Forms.TextBox
+        Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Id_ArticuloTextBox1 = New System.Windows.Forms.TextBox
         Me.FechaDateTimePicker = New System.Windows.Forms.DateTimePicker
-        Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MuebleriaDataSet = New WindowsApplication1.MuebleriaDataSet
-        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArticuloTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.ArticuloTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager
+        Me.CompraArtTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.CompraArtTableAdapter
         Me.VentasTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.VentasTableAdapter
         Me.CompraArtBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CompraArtTableAdapter = New WindowsApplication1.MuebleriaDataSetTableAdapters.CompraArtTableAdapter
         Me.CompraArtDataGridView = New System.Windows.Forms.DataGridView
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -79,10 +79,10 @@ Partial Class Vender
         FechaLabel = New System.Windows.Forms.Label
         Id_clienteLabel = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
+        CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompraArtBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompraArtDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -217,6 +217,16 @@ Partial Class Vender
         Me.Id_ArticuloTextBox.Size = New System.Drawing.Size(121, 20)
         Me.Id_ArticuloTextBox.TabIndex = 1
         '
+        'ArticuloBindingSource
+        '
+        Me.ArticuloBindingSource.DataMember = "Articulo"
+        Me.ArticuloBindingSource.DataSource = Me.MuebleriaDataSet
+        '
+        'MuebleriaDataSet
+        '
+        Me.MuebleriaDataSet.DataSetName = "MuebleriaDataSet"
+        Me.MuebleriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'DescripcionTextBox
         '
         Me.DescripcionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
@@ -345,6 +355,11 @@ Partial Class Vender
         Me.Id_VentasTextBox.Size = New System.Drawing.Size(99, 20)
         Me.Id_VentasTextBox.TabIndex = 1
         '
+        'VentasBindingSource
+        '
+        Me.VentasBindingSource.DataMember = "Ventas"
+        Me.VentasBindingSource.DataSource = Me.MuebleriaDataSet
+        '
         'Id_ArticuloTextBox1
         '
         Me.Id_ArticuloTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VentasBindingSource, "Id_Articulo", True))
@@ -360,21 +375,6 @@ Partial Class Vender
         Me.FechaDateTimePicker.Name = "FechaDateTimePicker"
         Me.FechaDateTimePicker.Size = New System.Drawing.Size(99, 20)
         Me.FechaDateTimePicker.TabIndex = 5
-        '
-        'VentasBindingSource
-        '
-        Me.VentasBindingSource.DataMember = "Ventas"
-        Me.VentasBindingSource.DataSource = Me.MuebleriaDataSet
-        '
-        'MuebleriaDataSet
-        '
-        Me.MuebleriaDataSet.DataSetName = "MuebleriaDataSet"
-        Me.MuebleriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ArticuloBindingSource
-        '
-        Me.ArticuloBindingSource.DataMember = "Articulo"
-        Me.ArticuloBindingSource.DataSource = Me.MuebleriaDataSet
         '
         'ArticuloTableAdapter
         '
@@ -395,6 +395,10 @@ Partial Class Vender
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.MuebleriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.VentasTableAdapter = Me.VentasTableAdapter
         '
+        'CompraArtTableAdapter
+        '
+        Me.CompraArtTableAdapter.ClearBeforeFill = True
+        '
         'VentasTableAdapter
         '
         Me.VentasTableAdapter.ClearBeforeFill = True
@@ -404,12 +408,11 @@ Partial Class Vender
         Me.CompraArtBindingSource.DataMember = "CompraArt"
         Me.CompraArtBindingSource.DataSource = Me.MuebleriaDataSet
         '
-        'CompraArtTableAdapter
-        '
-        Me.CompraArtTableAdapter.ClearBeforeFill = True
-        '
         'CompraArtDataGridView
         '
+        Me.CompraArtDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CompraArtDataGridView.AutoGenerateColumns = False
         Me.CompraArtDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CompraArtDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -469,11 +472,11 @@ Partial Class Vender
         Me.Text = "Form2"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MuebleriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompraArtBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompraArtDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
