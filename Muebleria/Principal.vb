@@ -279,7 +279,7 @@
 
     End Sub
 
-    Private Sub BuscarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem.Click
+    Private Sub BuscarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
 
     End Sub

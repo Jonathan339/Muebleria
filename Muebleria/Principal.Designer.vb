@@ -30,8 +30,6 @@ Partial Class Principal
         Me.AjusteDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarModificarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EliminarClinteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MostrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.VendedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -96,7 +94,7 @@ Partial Class Principal
         '
         'ClientesToolStripMenuItem
         '
-        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem1, Me.BuscarToolStripMenuItem, Me.EliminarClinteToolStripMenuItem})
+        Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarModificarToolStripMenuItem1})
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
         Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
@@ -106,18 +104,6 @@ Partial Class Principal
         Me.AgregarModificarToolStripMenuItem1.Name = "AgregarModificarToolStripMenuItem1"
         Me.AgregarModificarToolStripMenuItem1.Size = New System.Drawing.Size(172, 22)
         Me.AgregarModificarToolStripMenuItem1.Text = "Agregar/Modificar"
-        '
-        'BuscarToolStripMenuItem
-        '
-        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.BuscarToolStripMenuItem.Text = "Buscar cliente"
-        '
-        'EliminarClinteToolStripMenuItem
-        '
-        Me.EliminarClinteToolStripMenuItem.Name = "EliminarClinteToolStripMenuItem"
-        Me.EliminarClinteToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.EliminarClinteToolStripMenuItem.Text = "Eliminar clinte"
         '
         'VentasToolStripMenuItem
         '
@@ -324,7 +310,5 @@ Partial Class Principal
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents MostrarVentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EmpleadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EliminarClinteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
