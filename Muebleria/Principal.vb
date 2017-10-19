@@ -217,13 +217,16 @@
                     Vender.StockTextBox.Text = ArticuloDataGridView.Item(5, fila).Value()
                     Vender.Stock_MinimoTextBox.Text = ArticuloDataGridView.Item(6, fila).Value()
                     'mando el precio a el textbox importe
-                    'Vender.Importe.Text = ArticuloDataGridView.Item(4, fila).Value()
+                    Vender.Importe.Text = ArticuloDataGridView.Item(4, fila).Value()
 
 
                 End If
             End If
 
         End If
+
+
+
 
     End Sub
 
@@ -253,12 +256,14 @@
                     Vender.CategoriaComboBox.Text = ArticuloBindingSource.Current("Categoria")
                     Vender.TipoComboBox.Text = ArticuloBindingSource.Current("Tipo")
                     Vender.PrecioTextBox.Text = ArticuloBindingSource.Current("Precio")
+
+                    Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
                     
                     Vender.StockTextBox.Text = ArticuloBindingSource.Current("Stock")
                     Vender.Stock_MinimoTextBox.Text = ArticuloBindingSource.Current("Stock_Minimo")
 
                     'mando el precio a el textbox importe
-                    'Vender.Importe.Text = ArticuloBindingSource.Current("Precio")
+
 
 
 

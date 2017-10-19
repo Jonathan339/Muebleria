@@ -19,7 +19,7 @@
         '--------------------------------
 
 
-        Importe.Text = Val(PrecioTextBox.Text)
+        'Importe.Text = Val(PrecioTextBox.Text)
 
 
 
@@ -41,7 +41,7 @@
 
         'boton ventas
 
-        Dim fila, CodConsulta, aux, importe As Integer
+        Dim fila, CodConsulta, aux, ImporteVenta As Integer
         Dim aux2 As Date
 
         CodConsulta = Val(Id_ArticuloTextBox.Text)
@@ -68,7 +68,7 @@
                     'Me.VenBindingSource.Current("Precio") = Val(Cantidad.Text) * Me.ArticuloBindingSource.Current("Precio")
                     Me.CompraArtBindingSource.Current("Id_cliente") = Val(Id_cliente.Text)
                     Me.CompraArtBindingSource.Current("Cantidad") = Val(Cantidad.Text)
-                    Me.CompraArtBindingSource.Current("importe") = importe.ToString
+                    Me.CompraArtBindingSource.Current("importe") = Val(Cantidad.Text) * Val(Me.ArticuloBindingSource.Current("Precio"))
                     Me.CompraArtBindingSource.EndEdit()
                     Me.CompraArtTableAdapter.Update(Me.MuebleriaDataSet.CompraArt)
 
@@ -77,7 +77,7 @@
                     'aca trabajo sobre la tabla stock descuento la cantidad vendida
                     Me.ArticuloBindingSource.Current("Stock") = ArticuloBindingSource.Current("Stock") - Val(Cantidad.Text)
                     'error coregir con lo que pase anteriormente
-                    importe = Val(Cantidad.Text) * Me.ArticuloBindingSource.Current("Precio")
+                    ImporteVenta = Val(Cantidad.Text) * ArticuloBindingSource.Current("Precio")
                     'muestro el cambio e el stock en el textbox
 
                     StockTextBox.Text = ArticuloBindingSource.Current("Stock")
@@ -87,7 +87,7 @@
 
 
                     'muestro un mensaje
-                    MsgBox("La venta a sido realizada con exito el importe es:" & importe & " Pesos")
+                    MsgBox("La venta a sido realizada con exito el importe es: " & ImporteVenta & " Pesos")
                     Me.ArticuloBindingSource.EndEdit() 'cierro bd
                     Me.TableAdapterManager.UpdateAll(Me.MuebleriaDataSet) 'grabo en disco las dos tablas
                     Principal.ArticuloTableAdapter.Fill(Principal.MuebleriaDataSet.Articulo) 'Para actualizar en el otro formulario la grilla
